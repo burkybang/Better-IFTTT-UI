@@ -4,17 +4,30 @@
   "description": "Better IFTTT UI",
   "manifest_version": 2,
   "permissions": [
+    "tabs",
     "https://ifttt.com/*",
     "https://*.ifttt.com/*"
   ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
   "content_scripts": [
     {
       "matches": [
-        "https://ifttt.com/*",
-        "https://*.ifttt.com/*"
+        "https://ifttt.com/*"
       ],
       "css": [
         "ifttt.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://platform.ifttt.com/*"
+      ],
+      "css": [
+        "ifttt_platform.css"
       ]
     }
   ],
