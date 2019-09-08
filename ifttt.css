@@ -1,0 +1,182 @@
+@media (min-width: 724px) {
+	
+	/* Header Start */
+	html body {
+		padding-top: 4.8em;
+	}
+	
+	html .ifttt-next.site-header {
+		position: fixed;
+		top: 0;
+		z-index: 100;
+	}
+	
+	/* Header End*/
+	html .home-body [class^="service_list_item__service-title__"],
+	html .dashboard-body.services-action .my-services .services-list .service-item a .service-title {
+		font-size: 1em;
+	}
+	
+	html .switch .switch-label-off,
+	html .switch .switch-label-on {
+		font-size: 1.1em;
+	}
+	
+	html .switch-label {
+		height: 1.7em;
+		line-height: 2em;
+		font-weight: bold;
+	}
+	
+	html .switch-label-on:before {
+		content: "On";
+	}
+	
+	html .switch-label-off:before {
+		content: "Off";
+	}
+	
+	html .push-notifications .switch, .service-settings .switch,
+	html .connection-config-editor .switch {
+		width: 6em;
+	}
+	
+}
+
+@media (min-width: 1444px) {
+	
+	html .ifttt-next.site-header .navigation .search-group .search-field .input input[type="text"] {
+		max-width: calc(100vw - 1260px);
+	}
+	
+	html .ifttt-next .menu {
+		position: static;
+	}
+	
+	html .ifttt-next .menu .submenu {
+		visibility: visible;
+		position: absolute;
+		right: 250px;
+		top: 1.25em;
+		box-shadow: none;
+		height: 2.4em;
+		display: flex;
+		align-items: center;
+		background-color: transparent;
+	}
+	
+	html .ifttt-next .menu .submenu li {
+		display: inline-block;
+	}
+	
+	html .ifttt-next .menu li:first-of-type {
+		cursor: default;
+	}
+	
+	html .ifttt-next .menu .submenu li.name {
+		display: none;
+	}
+	
+	html .ifttt-next .menu .submenu li:last-of-type {
+		padding-bottom: 0;
+	}
+	
+	html .ifttt-next .menu .submenu li:hover {
+		background: transparent;
+	}
+	
+	html .ifttt-next .menu .submenu a {
+		padding: 0.5em 0.75em !important;
+		height: 2em;
+		display: flex;
+		align-items: center;
+		text-transform: capitalize;
+	}
+	
+	html .services-body .ifttt-next .menu .submenu li a,
+	html .connections-body .ifttt-next .menu .submenu li a {
+		color: white;
+	}
+	
+	/* Header End */
+	html .home-body [class^="my_services_view__my-services-container__"] [class^="my_services_view__my-services-list__"] {
+		grid: auto/30% 30% 30%;
+	}
+	
+	html .dashboard-body .web-applet-cards {
+		max-width: 100% !important;
+	}
+	
+	html .dashboard-body.services-action .my-services {
+		width: 100%;
+	}
+	
+	html .dashboard-body.services-action .my-services .services-list {
+		grid-template-columns: 30% 30% 30%;
+	}
+	
+	html body.connections-body.edit-action #config-editor .connection-config-editor,
+	html body.access-applets-body.edit-action #config-editor .connection-config-editor {
+		width: 100%;
+	}
+	
+	html .connections-body.edit-action ul.form {
+		display: grid;
+		grid: auto/50% 50%;
+		grid-gap: 0 1.4em;
+		align-items: baseline;
+	}
+	
+}
+
+@media (max-width: 1443px) {
+
+}
+
+@media (min-width: 724px) and (max-width: 1443px) {
+	
+}
+
+html .dashboard-body.services-action .my-services .services-list {
+	padding-top: 3.5em !important;
+}
+
+html .dashboard-body.services-action .my-services .services-list .service-item {
+	padding-top: 0;
+}
+
+html .dashboard-body.services-action .my-services .services-list .service-item a {
+	padding: 1.5em !important;
+	background-color: black;
+	border-radius: 0.9em;
+	box-shadow: 0 1.5px 6px 0 rgba(0, 0, 0, 0.24);
+}
+
+html .service-list-item a {
+	height: auto;
+	padding: 1em;
+}
+
+html .dashboard-body.services-action .my-services .services-list .service-item a .service-icon,
+html [class^="service_list_item__service-icon__"] {
+	height: 2em;
+}
+
+html .dashboard-body.services-action .my-services .services-list .service-item a .service-icon {
+	filter: none;
+}
+
+html .dashboard-body.services-action .my-services .services-list .service-item a .service-icon[title="Instapaper Old"] {
+	background: url(https://assets.ifttt.com/images/channels/1646223231/icons/monochrome_large.png) no-repeat center center;
+	background-size: contain;
+	width: 2em;
+	color: transparent;
+}
+
+html .dashboard-body.services-action .my-services .services-list .service-item a .service-title {
+	color: white;
+}
+
+html .dashboard-body.services-action .my-services .services-list .service-item a .service-arrow svg path {
+	fill: white;
+}

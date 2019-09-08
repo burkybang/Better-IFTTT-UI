@@ -1,0 +1,26 @@
+{
+  "name": "Better IFTTT UI",
+  "version": "1.0.0",
+  "description": "Better IFTTT UI",
+  "manifest_version": 2,
+  "permissions": [
+    "https://ifttt.com/*",
+    "https://*.ifttt.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ifttt.com/*",
+        "https://*.ifttt.com/*"
+      ],
+      "css": [
+        "ifttt.css"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}
