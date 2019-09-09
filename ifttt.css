@@ -94,7 +94,8 @@
 	}
 	
 	html .services-body .ifttt-next .menu .submenu li a,
-	html .connections-body .ifttt-next .menu .submenu li a {
+	html .connections-body .ifttt-next .menu .submenu li a,
+	html .diy-creation-body .ifttt-next .menu .submenu li a {
 		color: white;
 	}
 	
