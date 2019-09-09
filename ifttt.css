@@ -103,6 +103,19 @@
 		grid: auto/30% 30% 30%;
 	}
 	
+	html .dashboard-body .container.web > div > h1 {
+		float: left;
+		margin-top: 0;
+	}
+	
+	html .dashboard-body .container.web > div > .ifttt-next-search {
+		float: right;
+	}
+	
+	html .dashboard-body .container.web > div > .dashboard-applets {
+		clear: both;
+	}
+	
 	html .dashboard-body .web-applet-cards {
 		max-width: 100% !important;
 	}
