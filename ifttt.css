@@ -193,3 +193,11 @@ html .dashboard-body.services-action .my-services .services-list .service-item a
 html .dashboard-body.services-action .my-services .services-list .service-item a .service-arrow svg path {
 	fill: white;
 }
+
+html .activities-body .feed {
+	max-width: 70em;
+}
+
+html .activities-body .feed .applet-header {
+	max-width: 100%;
+}
