@@ -147,24 +147,27 @@
 		clear: both;
 	}
 	
-	html .dashboard-body .web-applet-cards {
+	html .dashboard-body .web-applet-cards,
+	html .diy-creation-body .trigger-fields .trigger-fields-container,
+	html .diy-creation-body .action-fields .trigger-fields-container {
 		max-width: 100% !important;
-	}
-	
-	html .dashboard-body.services-action .my-services {
-		width: 100%;
 	}
 	
 	html .dashboard-body.services-action .my-services .services-list {
 		grid-template-columns: 30% 30% 30%;
 	}
 	
-	html body.connections-body.edit-action #config-editor .connection-config-editor,
-	html body.access-applets-body.edit-action #config-editor .connection-config-editor {
-		width: 100%;
+	html .dashboard-body.services-action .my-services,
+	html .connections-body.edit-action #config-editor .connection-config-editor,
+	html .access-applets-body.edit-action #config-editor .connection-config-editor {
+		width: 100% !important;
+		max-width: calc(100vw - 200px);
 	}
 	
-	html .connections-body.edit-action ul.form {
+	/* Applet Edit: Fields in 2 Columns */
+	html .connections-body.edit-action ul.form,
+	html .diy-creation-body .trigger-fields ul.fields,
+	html .diy-creation-body .action-fields ul.fields {
 		display: grid;
 		grid: auto/50% 50%;
 		grid-gap: 0 1.4em;
@@ -231,4 +234,12 @@ html .activities-body .feed {
 
 html .activities-body .feed .applet-header {
 	max-width: 100%;
+}
+
+html body.connections-body.show-action .connection-header .cta,
+html body.connections-body.edit-action .connection-header .cta,
+html body.access-applets-body.edit-action .connection-header .cta {
+	width: 100% !important;
+	max-width: 70em;
+	word-break: break-word;
 }
