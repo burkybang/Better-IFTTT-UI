@@ -44,6 +44,7 @@
 		font-size: 1em;
 	}
 	
+	/* Add On/Off Label to Switches with No Labels - Start */
 	html .switch .switch-label-off,
 	html .switch .switch-label-on {
 		font-size: 1.1em;
@@ -67,6 +68,8 @@
 	html .connection-config-editor .switch {
 		width: 6em;
 	}
+	
+	/* Add On/Off Label to Switches with No Labels - End */
 	
 }
 
