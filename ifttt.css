@@ -12,6 +12,33 @@
 	}
 	
 	/* Header End*/
+	/* Floating Back Button */
+	html .ifttt-next.activities-body .activity-back-button,
+	html body.connections-body.show-action .connection-header .connection-back-button,
+	html body.connections-body.edit-action .connection-header .connection-back-button,
+	html body.access-applets-body.edit-action .connection-header .connection-back-button,
+		
+		/* Floating Settings Button */
+	html body.connections-body.show-action .connection-header .connection-settings-btn,
+	html body.connections-body.edit-action .connection-header .connection-settings-btn,
+	html body.access-applets-body.edit-action .connection-header .connection-settings-btn {
+		position: fixed;
+		top: calc(1em + 100px);
+	}
+	
+	/* Floating Back Button */
+	html body.connections-body.edit-action #config-editor .connection-back-btn,
+	html body.access-applets-body.edit-action #config-editor .connection-back-btn {
+		position: fixed;
+	}
+	
+	/* Invert Floating Back Button when it's outside of a colored header */
+	html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-back-button .btn.btn-outlined,
+		/* Floating Settings Button when it's outside of a colored header */
+	html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-settings-btn .btn.btn-outlined {
+		filter: invert(1);
+	}
+	
 	html .home-body [class^="service_list_item__service-title__"],
 	html .dashboard-body.services-action .my-services .services-list .service-item a .service-title {
 		font-size: 1em;
