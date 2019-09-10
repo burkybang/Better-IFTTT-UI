@@ -243,3 +243,8 @@ html body.access-applets-body.edit-action .connection-header .cta {
 	max-width: 70em;
 	word-break: break-word;
 }
+
+/* Remove the giant spacing at the bottom of the page */
+.breath-space {
+	display: none;
+}
