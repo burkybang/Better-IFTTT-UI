@@ -18,18 +18,18 @@ const async = (_this, func, ...args) => new Promise((resolve, reject) => {
   }
 });
 
-// Inject CSS into relevant tabs upon install
+// Inject content scripts into relevant tabs upon install
 chrome.runtime.onInstalled.addListener(() => {
   chrome.runtime.getManifest().content_scripts.forEach(content_script => {
-    if (!content_script.hasOwnProperty('css')) return;
+    if (!content_script.hasOwnProperty('js')) return;
     
     content_script.matches.forEach(async match => {
       const tabs = await async(chrome.tabs, 'query', {url: match});
       if (!tabs.length) return;
       
       for (const tab of tabs)
-        for (const css of content_script.css)
-          await async(chrome.tabs, 'insertCSS', tab.id, {file: css});
+        for (const js of content_script.js)
+          await async(chrome.tabs, 'executeScript', tab.id, {file: js});
     });
   });
 });

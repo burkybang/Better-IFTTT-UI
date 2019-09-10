@@ -16,20 +16,18 @@
   "content_scripts": [
     {
       "matches": [
-        "https://ifttt.com/*"
+        "https://ifttt.com/*",
+        "https://*.ifttt.com/*"
       ],
-      "css": [
-        "ifttt.css"
-      ]
-    },
-    {
-      "matches": [
-        "https://platform.ifttt.com/*"
+      "js": [
+        "content.js"
       ],
-      "css": [
-        "ifttt_platform.css"
-      ]
+      "run_at": "document_start",
+      "all_frames": true
     }
+  ],
+  "web_accessible_resources": [
+    "css/*"
   ],
   "icons": {
     "16": "icon.png",

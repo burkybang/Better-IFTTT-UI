@@ -1,0 +1,94 @@
+html .container,
+html .web-applet-cards {
+	max-width: 100%;
+}
+
+html .container.web {
+	padding: 1.25em;
+}
+
+@media (min-width: 1026px) {
+	
+	/* Floating Header */
+	/*html body {
+		padding-top: 4.8em;
+	}*/
+	
+	/* Floating Header */
+	/*html .site-header {
+		position: fixed;
+		top: 0;
+		z-index: 9999;
+	}*/
+	
+	/* Expanded Menu - Start */
+	html .menu.account-menu {
+		position: static;
+	}
+	
+	html .menu.account-menu .submenu {
+		visibility: visible;
+		position: absolute;
+		right: 165px;
+		top: 1em;
+		box-shadow: none;
+		height: 2.4em;
+		display: flex;
+		align-items: center;
+		background-color: transparent;
+		margin-top: 2px;
+		padding: 0;
+	}
+	
+	html .menu.account-menu .submenu li {
+		display: inline-block;
+	}
+	
+	html .menu.account-menu li:first-of-type {
+		cursor: default;
+	}
+	
+	html .menu.account-menu li.name svg,
+	html .menu.account-menu .submenu li.name {
+		display: none;
+	}
+	
+	html .menu.account-menu .submenu li:last-of-type {
+		padding-bottom: 0;
+	}
+	
+	html .menu.account-menu .submenu li:hover {
+		background: transparent;
+	}
+	
+	html .menu.account-menu .submenu a {
+		padding: 0 !important;
+		margin-right: 1.8em;
+		height: 2em;
+		display: flex;
+		align-items: center;
+		text-transform: capitalize;
+		color: white;
+	}
+	
+	/* Expanded Menu - End */
+	
+}
+
+@media (min-width: 1444px) {
+	
+	/* Expanded Menu */
+	html .menu.account-menu .submenu {
+		right: 190px;
+	}
+	
+}
+
+
+html .partners-body .main-sidebar-column {
+	display: none;
+}
+
+html .partners-body .main-content-column {
+	width: 100%;
+}

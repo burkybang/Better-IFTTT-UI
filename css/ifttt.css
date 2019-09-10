@@ -1,17 +1,17 @@
 @media (min-width: 724px) {
 	
-	/* Header Start */
+	/* Floating Header */
 	html body {
 		padding-top: 4.8em;
 	}
 	
+	/* Floating Header */
 	html .ifttt-next.site-header {
 		position: fixed;
 		top: 0;
 		z-index: 9999;
 	}
 	
-	/* Header End*/
 	/* Floating Back Button */
 	html .ifttt-next.activities-body .activity-back-button,
 	html body.connections-body.show-action .connection-header .connection-back-button,
@@ -79,6 +79,7 @@
 		max-width: calc(100vw - 1260px);
 	}
 	
+	/* Expanded Menu - Start */
 	html .ifttt-next .menu {
 		position: static;
 	}
@@ -123,13 +124,13 @@
 		text-transform: capitalize;
 	}
 	
+	/* Expanded Menu - End */
 	html .services-body .ifttt-next .menu .submenu li a,
 	html .connections-body .ifttt-next .menu .submenu li a,
 	html .diy-creation-body .ifttt-next .menu .submenu li a {
 		color: white;
 	}
 	
-	/* Header End */
 	html .home-body [class^="my_services_view__my-services-container__"] [class^="my_services_view__my-services-list__"] {
 		grid: auto/30% 30% 30%;
 	}
