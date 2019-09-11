@@ -17,8 +17,8 @@
 	html body.connections-body .connection-header .connection-back-button,
 	html body.access-applets-body.edit-action .connection-header .connection-back-button,
 	html body.services-body.show-action .ifttt-back-button a.btn {
-		position: fixed;
-		top: calc(1em + 100px);
+		position: fixed !important;
+		top: calc(1em + 100px) !important;
 	}
 	
 	/* Floating Settings Button */
