@@ -1,0 +1,42 @@
+{
+  "name": "Better IFTTT UI",
+  "version": "1.2.0",
+  "description": "Better IFTTT UI",
+  "manifest_version": 2,
+  "permissions": [
+    "tabs",
+    "https://ifttt.com/*",
+    "https://*.ifttt.com/*"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://ifttt.com/*",
+        "https://*.ifttt.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    "css/*"
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "applications": {
+    "gecko": {
+      "id": "better-ifttt-ui@burkybang.io"
+    }
+  }
+}
