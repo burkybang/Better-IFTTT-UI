@@ -1,8 +1,8 @@
-@media (min-width: 724px) {
+@media (min-width: 724px) and (min-height: 1000px) {
 	
 	/* Floating Header */
 	html body {
-		padding-top: 4.8em;
+		padding-top: 4.96em;
 	}
 	
 	/* Floating Header */
@@ -12,6 +12,10 @@
 		z-index: 9999;
 	}
 	
+}
+
+@media (min-width: 1700px) and (min-height: 1000px) {
+	
 	/* Floating Back Button */
 	html .ifttt-next.activities-body .activity-back-button a.btn,
 	html body.connections-body .connection-header .connection-back-button a.btn,
@@ -19,6 +23,7 @@
 	html body.services-body.show-action .ifttt-back-button a.btn {
 		position: fixed !important;
 		top: calc(1em + 100px) !important;
+		z-index: 9999;
 	}
 	
 	/* Floating Settings Button */
@@ -28,6 +33,7 @@
 		position: fixed;
 		top: calc(1em + 100px);
 		right: 1.25em;
+		z-index: 9999;
 	}
 	
 	/* Floating Top Right Non-Settings Button */
@@ -56,7 +62,12 @@
 	html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-settings-btn .btn.btn-outlined,
 	html body[style="background-color: rgb(0, 0, 0);"].services-body .service-header .service-settings-btn a.btn {
 		filter: invert(1);
+		background-color: black;
 	}
+	
+}
+
+@media (min-width: 724px) {
 	
 	html .home-body [class^="service_list_item__service-title__"],
 	html .dashboard-body.services-action .my-services .services-list .service-item a .service-title {

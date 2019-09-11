@@ -1,4 +1,4 @@
-html .container,
+html header .container,
 html .web-applet-cards {
 	max-width: 100%;
 }
@@ -7,19 +7,28 @@ html .container.web {
 	padding: 1.25em;
 }
 
-@media (min-width: 1026px) {
+html .partners-body .logo {
+	margin-left: 0;
+}
+
+@media (min-width: 724px) and (min-height: 1000px) {
 	
 	/* Floating Header */
-	/*html body {
-		padding-top: 4.8em;
-	}*/
+	html body {
+		padding-top: 4.68em;
+	}
 	
 	/* Floating Header */
-	/*html .site-header {
+	html .site-header {
 		position: fixed;
 		top: 0;
 		z-index: 9999;
-	}*/
+	}
+	
+}
+
+
+@media (min-width: 1026px) {
 	
 	/* Expanded Menu - Start */
 	html .menu.account-menu {
@@ -85,10 +94,11 @@ html .container.web {
 }
 
 
+/*
 html .partners-body .main-sidebar-column {
 	display: none;
 }
 
 html .partners-body .main-content-column {
 	width: 100%;
-}
+}*/
