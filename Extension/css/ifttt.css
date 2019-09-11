@@ -1,4 +1,4 @@
-@media (min-width: 724px) and (min-height: 1000px) {
+@media (min-width: 724px) and (min-height: 850px) {
 	
 	/* Floating Header */
 	html body {
@@ -14,7 +14,7 @@
 	
 }
 
-@media (min-width: 1700px) and (min-height: 1000px) {
+@media (min-width: 1700px) and (min-height: 850px) {
 	
 	/* Floating Back Button */
 	html .ifttt-next.activities-body .activity-back-button a.btn,
