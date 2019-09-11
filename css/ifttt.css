@@ -16,13 +16,18 @@
 	html .ifttt-next.activities-body .activity-back-button,
 	html body.connections-body .connection-header .connection-back-button,
 	html body.access-applets-body.edit-action .connection-header .connection-back-button,
-	html body.services-body.show-action .ifttt-back-button a.btn,
-		
-		/* Floating Settings Button */
+	html body.services-body.show-action .ifttt-back-button a.btn {
+		position: fixed;
+		top: calc(1em + 100px);
+	}
+	
+	/* Floating Settings Button */
 	html body.connections-body .connection-header .connection-settings-btn,
+	html body.services-body .service-header .service-settings-btn,
 	html body.access-applets-body.edit-action .connection-header .connection-settings-btn {
 		position: fixed;
 		top: calc(1em + 100px);
+		right: 1.25em;
 	}
 	
 	/* Floating Back Button */
@@ -42,7 +47,8 @@
 	html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-back-button .btn.btn-outlined,
 	html body[style="background-color: rgb(0, 0, 0);"].services-body.show-action .ifttt-back-button a.btn,
 		/* Floating Settings Button when it's outside of a colored header */
-	html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-settings-btn .btn.btn-outlined {
+	html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-settings-btn .btn.btn-outlined,
+	html body[style="background-color: rgb(0, 0, 0);"].services-body .service-header .service-settings-btn a.btn {
 		filter: invert(1);
 	}
 	
