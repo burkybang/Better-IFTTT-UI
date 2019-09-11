@@ -194,6 +194,13 @@
 		align-items: baseline;
 	}
 	
+	/* Applet Edit: Fields in 2 Columns: Display 1 Column If Only 1 Field */
+	html .connections-body.edit-action ul.form > .field:first-child:last-child,
+	html .diy-creation-body .trigger-fields ul.fields > .field:first-child:last-child,
+	html .diy-creation-body .action-fields ul.fields > .field:first-child:last-child {
+		grid-column: span 2;
+	}
+	
 	/* Align Controls */
 	html body.connections-body.edit-action #config-editor .connection-push-notifications,
 	html body.access-applets-body.edit-action #config-editor .connection-push-notifications,
