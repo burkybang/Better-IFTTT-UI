@@ -13,21 +13,27 @@
 	}
 	
 	/* Floating Back Button */
-	html .ifttt-next.activities-body .activity-back-button,
-	html body.connections-body .connection-header .connection-back-button,
-	html body.access-applets-body.edit-action .connection-header .connection-back-button,
+	html .ifttt-next.activities-body .activity-back-button a.btn,
+	html body.connections-body .connection-header .connection-back-button a.btn,
+	html body.access-applets-body.edit-action .connection-header .connection-back-button a.btn,
 	html body.services-body.show-action .ifttt-back-button a.btn {
 		position: fixed !important;
 		top: calc(1em + 100px) !important;
 	}
 	
 	/* Floating Settings Button */
-	html body.connections-body .connection-header .connection-settings-btn,
-	html body.services-body .service-header .service-settings-btn,
-	html body.access-applets-body.edit-action .connection-header .connection-settings-btn {
+	html body.connections-body .connection-header .connection-settings-btn a.btn,
+	html body.services-body .service-header .service-settings-btn a.btn,
+	html body.access-applets-body.edit-action .connection-header .connection-settings-btn a.btn {
 		position: fixed;
 		top: calc(1em + 100px);
 		right: 1.25em;
+	}
+	
+	/* Floating Top Right Non-Settings Button */
+	html body.services-body .service-header div:not([data-react-props^="{\"text\":\"Settings\""]) > .service-settings-btn a.btn,
+	html body.connections-body .connection-header div:not([data-react-class="App.Comps.ConnectionCard.SettingsButton"]) > .connection-settings-btn a.btn {
+		right: calc(1.25em + 135px);
 	}
 	
 	/* Floating Back Button */
