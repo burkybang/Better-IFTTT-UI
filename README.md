@@ -11,6 +11,11 @@ This project is open source. If you'd like to contribute, please do so. I would 
 
 ## Screenshots
 
-![Home Page](Screenshots/Screenshot1.jpg "Home Page")
+**Home Page**
+![Home Page](Screenshots/HomePage.jpg "Home Page")
 
-![My Services](Screenshots/Screenshot2.jpg "My Services")
+**Create Applet**
+![Create Applet](Screenshots/CreateApplet.jpg "Create Applet")
+
+**My Services**
+![My Services](Screenshots/MyServices.jpg "My Services")
