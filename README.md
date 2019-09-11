@@ -11,11 +11,13 @@ This project is open source. If you'd like to contribute, please do so. I would 
 
 ## Screenshots
 
-**Home Page**
+### Home Page
 ![Home Page](Screenshots/HomePage.jpg "Home Page")
 
-**Create Applet**
+
+### Create Applet
 ![Create Applet](Screenshots/CreateApplet.jpg "Create Applet")
 
-**My Services**
+
+### My Services
 ![My Services](Screenshots/MyServices.jpg "My Services")
