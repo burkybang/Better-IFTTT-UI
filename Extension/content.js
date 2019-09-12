@@ -1,4 +1,4 @@
-(() => {
+(async () => {
   const dev = localStorage.getItem('dev') == 'true';
   
   const updateStyle = (id, css) => {
@@ -37,6 +37,13 @@
     document.documentElement.appendChild(link);
   };
   
+  const httpRequest = url => new Promise(resolve => {
+    chrome.runtime.sendMessage({
+      action: 'ajax-request',
+      url: url,
+    }, resolve);
+  });
+  
   let file;
   
   switch (window.origin) {
@@ -61,18 +68,14 @@
     else
       loadLocalCss(id, file);
     
-    chrome.runtime.sendMessage({
-      action: 'ajax-request',
-      url: 'https://raw.githubusercontent.com/burkybang/Better-IFTTT-UI/master/Extension/css/' + file + '.css?_=' + Date.now()
-    }, css => {
-      if (css) {
-        updateStyle(id, css);
-        localStorage.setItem(id, css);
-        return;
-      }
-      
+    const css = await httpRequest('https://raw.githubusercontent.com/burkybang/Better-IFTTT-UI/master/Extension/css/' + file + '.css?_=' + Date.now());
+    
+    if (css) {
+      updateStyle(id, css);
+      localStorage.setItem(id, String(css));
+    } else {
       loadLocalCss(id, file);
-    });
+    }
   }
   
 })();
