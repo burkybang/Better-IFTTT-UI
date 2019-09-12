@@ -1,6 +1,15 @@
 (async () => {
   const dev = localStorage.getItem('dev') == 'true';
   
+  function minifyCss(css) {
+    return css
+    .replace(/\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g, '')
+    .replace(/ {2,}/g, ' ')
+    .replace(/ ([{:}]) /g, '$1')
+    .replace(/([;,]) /g, '$1')
+    .replace(/ !/g, '!');
+  }
+  
   const updateStyle = (id, css) => {
     const existingStyle = document.getElementById(id);
     if (existingStyle)
@@ -68,11 +77,12 @@
     else
       loadLocalCss(id, file);
     
-    const css = await httpRequest('https://raw.githubusercontent.com/burkybang/Better-IFTTT-UI/master/Extension/css/' + file + '.css?_=' + Date.now());
+    let css = await httpRequest('https://raw.githubusercontent.com/burkybang/Better-IFTTT-UI/master/Extension/css/' + file + '.css?_=' + Date.now());
     
     if (css) {
+      css = minifyCss(css);
       updateStyle(id, css);
-      localStorage.setItem(id, String(css));
+      localStorage.setItem(id, css);
     } else {
       loadLocalCss(id, file);
     }

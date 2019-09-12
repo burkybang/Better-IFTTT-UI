@@ -35,7 +35,9 @@ chrome.runtime.onInstalled.addListener(() => {
 });
 
 const httpRequest = url => new Promise(resolve => {
-  fetch(url).then(response => {
+  fetch(url, {
+    cache: 'no-cache'
+  }).then(response => {
     if (response.status !== 200) throw '';
     return response.text();
   })
