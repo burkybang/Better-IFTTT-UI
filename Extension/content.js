@@ -75,3 +75,29 @@
   }
   
 })();
+
+
+if (!window.init) {
+  (() => {
+    const pageChange = () => {
+      if (document.documentElement.classList.length) return;
+      setTimeout(() => {
+        
+        if (location.href == 'https://ifttt.com/my_applets')
+          location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
+        
+      }, 0);
+    };
+    
+    window.onload = pageChange;
+    
+    new MutationObserver(pageChange).observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+      childList: false,
+      characterData: false
+    });
+    
+  })();
+  window.init = true;
+}
