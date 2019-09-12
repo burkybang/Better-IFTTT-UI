@@ -14,8 +14,11 @@ This project is open source. If you'd like to contribute, please do so. I would 
 ### Home Page
 ![Home Page](Screenshots/HomePage.jpg "Home Page")
 
-### Create Applet
-![Create Applet](Screenshots/CreateApplet.jpg "Create Applet")
+### My Applets
+![My Applets](Screenshots/MyApplets.jpg "My Applets")
 
 ### My Services
 ![My Services](Screenshots/MyServices.jpg "My Services")
+
+### Create Applet
+![Create Applet](Screenshots/CreateApplet.jpg "Create Applet")
