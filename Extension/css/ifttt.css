@@ -1,3 +1,8 @@
+html body {
+	overflow: hidden;
+	font-size: 1em !important;
+}
+
 @media (min-width: 724px) and (min-height: 850px) {
 	
 	/* Floating Header */
@@ -235,10 +240,6 @@
 
 @media (min-width: 724px) and (max-width: 1443px) {
 	
-}
-
-html body {
-	overflow: hidden;
 }
 
 html .dashboard-body.services-action .my-services .services-list {
