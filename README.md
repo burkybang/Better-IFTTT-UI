@@ -1,6 +1,6 @@
 # Better IFTTT UI
 
-This is a work in progress to make the IFTTT UI better on desktop.
+This is a browser extension to make the IFTTT UI more usable on desktop.
 
 This project is open source. If you'd like to contribute, please do so. I would love for this to be a community project.
 
