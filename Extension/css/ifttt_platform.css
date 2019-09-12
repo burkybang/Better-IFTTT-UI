@@ -42,14 +42,13 @@ html .partners-body .logo {
 	html .menu.account-menu .submenu {
 		visibility: visible;
 		position: absolute;
-		right: 165px;
-		top: 1em;
+		right: 9.3em;
+		top: calc(1em + 3px);
 		box-shadow: none;
 		height: 2.4em;
 		display: flex;
 		align-items: center;
 		background-color: transparent;
-		margin-top: 2px;
 		padding: 0;
 	}
 	
@@ -92,7 +91,7 @@ html .partners-body .logo {
 	
 	/* Expanded Menu */
 	html .menu.account-menu .submenu {
-		right: 190px;
+		top: calc(1em + 5px);
 	}
 	
 }
