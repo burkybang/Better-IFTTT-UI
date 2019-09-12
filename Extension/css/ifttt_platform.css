@@ -3,7 +3,12 @@ html body {
 }
 
 html header .container,
-html .web-applet-cards {
+html .web-applet-cards,
+html .partners-body main.container,
+html .applet-preview-card,
+html .partners-applets-body .applet-preview-applet-card,
+html .partners-connections-body .applet-preview-applet-card,
+html .applet-composer .composer-section-with-icon {
 	max-width: 100%;
 }
 
@@ -13,6 +18,48 @@ html .container.web {
 
 html .partners-body .logo {
 	margin-left: 0;
+}
+
+/* New Layout for Applet View - Start */
+html .partners-body .main-content-column,
+html .partners-body .main-sidebar-column {
+	width: 100%;
+}
+
+html .sidebar-nav {
+	display: flex;
+}
+
+html .sidebar-nav ul {
+	display: flex;
+	align-self: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+html .sidebar-nav a {
+	margin: 0;
+	padding: 0.25em 1em;
+	white-space: nowrap;
+	border-left-width: 0;
+	border-bottom: solid 0.275em transparent;
+}
+
+html .sidebar-nav li.active a {
+	border-bottom-width: 0.275em;
+}
+
+html .partners-body.partners-applets-body.show-action .applets-index-applet-cards .web-applet-card,
+html .partners-body.partners-applets-body.show-action .applet-preview-applet-card .web-applet-card,
+html .partners-connections-body .applets-index-applet-cards .web-applet-card,
+html .partners-connections-body .applet-preview-applet-card .web-applet-card {
+	width: 19em;
+}
+
+/* New Layout for Applet View - End */
+
+html .applet-composer.applet-composer-with-right-gutter {
+	max-width: 70em;
 }
 
 @media (min-width: 724px) and (min-height: 850px) {
@@ -94,6 +141,56 @@ html .partners-body .logo {
 		top: calc(1em + 5px);
 	}
 	
+	/* New Layout for Applet View - Start */
+	html .partners-body.show-action .main-content-column {
+		display: grid;
+		grid: auto/22em calc(100% - 22em);
+	}
+	
+	html .partners-body.show-action .main-content-column .page-header.with-actions {
+		grid-column: span 2;
+	}
+	
+	html .partners-body.show-action .main-content-column .applet-preview-details {
+		margin-top: 2em;
+	}
+	
+	html .partners-body.partners-applets-body.show-action .preview-section,
+	html .partners-connections-body .preview-section {
+		grid-row: span 2;
+	}
+	
+	html .partners-body.partners-applets-body.show-action .applets-index-applet-cards,
+	html .partners-body.partners-applets-body.show-action .applet-preview-applet-card,
+	html .partners-connections-body .applets-index-applet-cards,
+	html .partners-connections-body .applet-preview-applet-card {
+		margin: 0;
+	}
+	
+	html .partners-body.partners-applets-body.show-action .applets-index-applet-cards .web-applet-card,
+	html .partners-body.partners-applets-body.show-action .applet-preview-applet-card .web-applet-card,
+	html .partners-connections-body .applets-index-applet-cards .web-applet-card,
+	html .partners-connections-body .applet-preview-applet-card .web-applet-card {
+		padding: 0;
+	}
+	
+	html .partners-body.partners-applets-body.show-action .applet-preview-details-list,
+	html .partners-connections-body .applet-preview-details-list {
+		margin: 0;
+	}
+	
+	html .partners-body.partners-applets-body.show-action .preview-section > .preview-section-content,
+	html .partners-connections-body .preview-section > .preview-section-content {
+		border-radius: 0.5em;
+	}
+	
+	/* New Layout for Applet View - End */
+	
+}
+
+/* Prevent Applet title from overflowing outside of its container */
+html .applet-content h2 {
+	word-break: break-word;
 }
 
 
