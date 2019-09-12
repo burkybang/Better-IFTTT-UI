@@ -9,6 +9,11 @@ This project is open source. If you'd like to contribute, please do so. I would 
 - [Google Chrome / Microsoft Edge Beta](https://chrome.google.com/webstore/detail/diopohabmpmmpdabhghdpjnkhlicfjnp)
 - [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/better-ifttt-ui/)
 
+## Author
+
+- [@burkybang](https://twitter.com/burkybang)
+- [u/burkybang](https://reddit.com/u/burkybang)
+
 ## Screenshots
 
 ### Home Page
