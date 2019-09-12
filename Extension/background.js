@@ -33,3 +33,20 @@ chrome.runtime.onInstalled.addListener(() => {
     });
   });
 });
+
+const httpRequest = url => new Promise(resolve => {
+  fetch(url).then(response => {
+    if (response.status !== 200) throw '';
+    return response.text();
+  })
+  .then(css => resolve(css))
+  .catch(() => resolve());
+});
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action == 'ajax-request') {
+    if (typeof request.url !== 'string') return;
+    httpRequest(request.url).then(sendResponse);
+    return true;
+  }
+});

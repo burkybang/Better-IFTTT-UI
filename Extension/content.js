@@ -61,17 +61,18 @@
     else
       loadLocalCss(id, file);
     
-    const url = 'https://raw.githubusercontent.com/burkybang/Better-IFTTT-UI/master/Extension/css/' + file + '.css?_=' + Date.now();
-    
-    fetch(url).then(response => {
-      if (response.status !== 200)
-        throw '';
-      return response.text();
-    }).then(css => {
-      updateStyle(id, css);
-      localStorage.setItem(id, css);
-    }).catch(() => loadLocalCss(id, file));
-    
+    chrome.runtime.sendMessage({
+      action: 'ajax-request',
+      url: 'https://raw.githubusercontent.com/burkybang/Better-IFTTT-UI/master/Extension/css/' + file + '.css?_=' + Date.now()
+    }, css => {
+      if (css) {
+        updateStyle(id, css);
+        localStorage.setItem(id, css);
+        return;
+      }
+      
+      loadLocalCss(id, file);
+    });
   }
   
 })();
