@@ -79,14 +79,17 @@
 
 if (!window.init) {
   (() => {
-    const pageChange = () => {
+    const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+    
+    const pageChange = async arg => {
       if (document.documentElement.classList.length) return;
-      setTimeout(() => {
-        
-        if (location.href == 'https://ifttt.com/my_applets')
-          location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
-        
-      }, 0);
+      
+      if (arg && arg.constructor.name == 'Array')
+        await delay(0);
+      
+      if (location.href == 'https://ifttt.com/my_applets')
+        location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
+      
     };
     
     window.onload = pageChange;
