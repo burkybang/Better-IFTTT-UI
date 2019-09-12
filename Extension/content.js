@@ -1,25 +1,33 @@
 (() => {
+  const dev = localStorage.getItem('dev') == 'true';
   
-  let style;
+  const updateStyle = (id, css) => {
+    const existingStyle = document.getElementById(id);
+    if (existingStyle)
+      if (existingStyle.tagName == 'STYLE') {
+        existingStyle.innerHTML = css;
+        return;
+      } else {
+        existingStyle.parentNode.removeChild(existingStyle);
+      }
+    
+    const style = document.createElement('style');
+    style.id = id;
+    style.innerHTML = css;
+    document.documentElement.appendChild(style);
+  };
   
-  switch (window.origin) {
-    case 'https://ifttt.com':
-      style = 'ifttt';
-      break;
-    case 'https://platform.ifttt.com':
-      style = 'ifttt_platform';
-      break;
-  }
-  
-  if (style) {
-    const id = style + '_style';
-    const href = chrome.extension.getURL(chrome.runtime.getURL('css/' + style + '.css') + '?_=' + Date.now());
+  const loadLocalCss = (id, file) => {
+    const href = chrome.extension.getURL(chrome.runtime.getURL('css/' + file + '.css') + '?_=' + Date.now());
     
     const existingStyle = document.getElementById(id);
-    if (existingStyle) {
-      existingStyle.href = href;
-      return;
-    }
+    if (existingStyle)
+      if (existingStyle.tagName == 'LINK') {
+        existingStyle.href = href;
+        return;
+      } else {
+        existingStyle.parentNode.removeChild(existingStyle);
+      }
     
     const link = document.createElement('link');
     link.href = href;
@@ -27,6 +35,43 @@
     link.type = 'text/css';
     link.rel = 'stylesheet';
     document.documentElement.appendChild(link);
+  };
+  
+  let file;
+  
+  switch (window.origin) {
+    case 'https://ifttt.com':
+      file = 'ifttt';
+      break;
+    case 'https://platform.ifttt.com':
+      file = 'ifttt_platform';
+      break;
+  }
+  
+  if (!file) return;
+  
+  const id = file + '_style';
+  
+  if (dev) {
+    loadLocalCss(id, file);
+  } else {
+    const cachedCss = localStorage.getItem(id);
+    if (cachedCss)
+      updateStyle(id, cachedCss);
+    else
+      loadLocalCss(id, file);
+    
+    const url = 'https://raw.githubusercontent.com/burkybang/Better-IFTTT-UI/master/Extension/css/' + file + '.css?_=' + Date.now();
+    
+    fetch(url).then(response => {
+      if (response.status !== 200)
+        throw '';
+      return response.text();
+    }).then(css => {
+      updateStyle(id, css);
+      localStorage.setItem(id, css);
+    }).catch(() => loadLocalCss(id, file));
+    
   }
   
 })();
