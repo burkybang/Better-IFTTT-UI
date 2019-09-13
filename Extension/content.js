@@ -110,11 +110,12 @@ if (!window.init) {
         case 'https://ifttt.com/my_applets':
           if (event == 'navigate')
             await delay(0);
-          location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
+          if (event != 'ready')
+            location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
           break;
       }
     };
-  
+    
     document.addEventListener('DOMContentLoaded', pageChange, false);
     window.onload = pageChange;
     
