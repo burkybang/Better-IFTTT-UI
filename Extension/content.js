@@ -105,7 +105,8 @@ if (!window.init) {
       
       switch (location.href) {
         case 'https://ifttt.com/':
-          document.title = document.title.replace('My services - ', '');
+          if (event != 'load')
+            document.title = document.title.replace('My services - ', '');
           break;
         case 'https://ifttt.com/my_applets':
           if (event == 'navigate')
