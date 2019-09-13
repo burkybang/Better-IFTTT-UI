@@ -27,7 +27,7 @@ html body {
 	html body.access-applets-body.edit-action .connection-header .connection-back-button a.btn,
 	html body.services-body.show-action .ifttt-back-button a.btn {
 		position: fixed !important;
-		top: 6em !important;
+		top: calc(1em + 82px) !important;
 		z-index: 9999;
 	}
 	
@@ -36,7 +36,7 @@ html body {
 	html body.services-body .service-header .service-settings-btn a.btn,
 	html body.access-applets-body.edit-action .connection-header .connection-settings-btn a.btn {
 		position: fixed;
-		top: 6em;
+		top: calc(1em + 82px);
 		right: 1.25em;
 		z-index: 9999;
 	}
@@ -154,10 +154,12 @@ html body {
 		height: auto;
 		width: 100%;
 		overflow: visible;
+		color: black;
 	}
 	
 	html .ifttt-next .menu.account-menu .submenu li.name .login span {
 		font-size: inherit;
+		color: inherit;
 	}
 	
 	html .ifttt-next .menu.account-menu .submenu li.name .profile-avatar-container {
@@ -186,7 +188,7 @@ html body {
 	html .services-body .ifttt-next .menu.account-menu .submenu li a,
 	html .connections-body .ifttt-next .menu.account-menu .submenu li a,
 	html .diy-creation-body .ifttt-next .menu.account-menu .submenu li a {
-		color: white;
+		color: white !important;
 	}
 	
 	/* Expanded Menu - End */
