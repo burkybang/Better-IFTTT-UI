@@ -154,7 +154,7 @@ html body {
 		height: auto;
 		width: 100%;
 		overflow: visible;
-		color: black;
+		color: #333;
 	}
 	
 	html .ifttt-next .menu.account-menu .submenu li.name .login span {
