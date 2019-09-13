@@ -27,7 +27,7 @@ html body {
 	html body.access-applets-body.edit-action .connection-header .connection-back-button a.btn,
 	html body.services-body.show-action .ifttt-back-button a.btn {
 		position: fixed !important;
-		top: calc(1em + 100px) !important;
+		top: 6em !important;
 		z-index: 9999;
 	}
 	
@@ -36,7 +36,7 @@ html body {
 	html body.services-body .service-header .service-settings-btn a.btn,
 	html body.access-applets-body.edit-action .connection-header .connection-settings-btn a.btn {
 		position: fixed;
-		top: calc(1em + 100px);
+		top: 6em;
 		right: 1.25em;
 		z-index: 9999;
 	}
