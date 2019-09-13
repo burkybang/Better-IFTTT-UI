@@ -215,8 +215,13 @@ html body {
 		max-width: 100% !important;
 	}
 	
+	html .dashboard-body.services-action .my-services {
+		max-width: 100% !important;
+	}
+	
 	html .dashboard-body.services-action .my-services .services-list {
-		grid-template-columns: 30% 30% 30%;
+		grid-template-columns: repeat(4, 25%);
+		padding: 0 1.4em;
 	}
 	
 	html .dashboard-body.services-action .my-services,
