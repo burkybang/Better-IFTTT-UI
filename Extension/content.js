@@ -96,16 +96,26 @@ if (!window.init) {
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
     
     const pageChange = async arg => {
+      // Wait until finished navigating
       if (document.documentElement.classList.length) return;
       
-      if (arg && arg.constructor.name == 'Array')
-        await delay(0);
+      // Events: navigate, ready, load
+      const event = arg && arg.constructor.name == 'Array' ? 'navigate' :
+        (arg.type == 'DOMContentLoaded' ? 'ready' : arg.type);
       
-      if (location.href == 'https://ifttt.com/my_applets')
-        location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
-      
+      switch (location.href) {
+        case 'https://ifttt.com/':
+          document.title = document.title.replace('My services - ', '');
+          break;
+        case 'https://ifttt.com/my_applets':
+          if (event == 'navigate')
+            await delay(0);
+          location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
+          break;
+      }
     };
-    
+  
+    document.addEventListener('DOMContentLoaded', pageChange, false);
     window.onload = pageChange;
     
     new MutationObserver(pageChange).observe(document.documentElement, {
