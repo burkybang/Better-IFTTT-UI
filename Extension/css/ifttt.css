@@ -1,6 +1,7 @@
 html body {
 	overflow: hidden;
 	font-size: 1em !important;
+	color: #000000;
 }
 
 @media (min-width: 724px) and (min-height: 850px) {
