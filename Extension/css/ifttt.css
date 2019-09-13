@@ -182,7 +182,8 @@ html body {
 		align-items: center;
 	}
 	
-	html .ifttt-next .menu.account-menu .submenu li:not(.name) a {
+	html .ifttt-next .menu.account-menu .submenu li:not(.name) a,
+	html .my-services h1 {
 		text-transform: capitalize;
 	}
 	
