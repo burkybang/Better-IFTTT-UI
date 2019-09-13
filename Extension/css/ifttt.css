@@ -115,14 +115,18 @@ html body {
 	}
 	
 	/* Expanded Menu - Start */
-	html .ifttt-next .menu {
+	html .ifttt-next .menu.account-menu {
 		position: static;
 	}
 	
-	html .ifttt-next .menu .submenu {
+	html .ifttt-next .menu.account-menu > li.name {
+		display: none;
+	}
+	
+	html .ifttt-next .menu.account-menu .submenu {
 		visibility: visible;
 		position: absolute;
-		right: 12em;
+		right: 8.5em;
 		top: 1.25em;
 		box-shadow: none;
 		height: 2.4em;
@@ -131,41 +135,61 @@ html body {
 		background-color: transparent;
 	}
 	
-	html .ifttt-next .menu .submenu li {
+	html .ifttt-next .menu.account-menu .submenu > li {
 		display: inline-block;
 	}
 	
-	html .ifttt-next .menu li:first-of-type {
+	html .ifttt-next .menu.account-menu .submenu li.name {
 		cursor: default;
+		height: auto;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		float: right;
+		font-size: 0.9em;
+		margin-left: auto;
+		order: 1;
 	}
 	
-	html .ifttt-next .menu .submenu li.name {
-		display: none;
+	html .ifttt-next .menu.account-menu .submenu li.name .login {
+		height: auto;
+		width: 100%;
+		overflow: visible;
 	}
 	
-	html .ifttt-next .menu .submenu li:last-of-type {
+	html .ifttt-next .menu.account-menu .submenu li.name .login span {
+		font-size: inherit;
+	}
+	
+	html .ifttt-next .menu.account-menu .submenu li.name .profile-avatar-container {
+		margin: -0.8em 0 -0.8em 0.3em;
+	}
+	
+	html .ifttt-next .menu.account-menu .submenu li:last-of-type {
 		padding-bottom: 0;
 	}
 	
-	html .ifttt-next .menu .submenu li:hover {
+	html .ifttt-next .menu.account-menu .submenu li:hover {
 		background: transparent;
 	}
 	
-	html .ifttt-next .menu .submenu a {
+	html .ifttt-next .menu.account-menu .submenu a {
 		padding: 0.5em 0.75em !important;
 		height: 2em;
 		display: flex;
 		align-items: center;
+	}
+	
+	html .ifttt-next .menu.account-menu .submenu li:not(.name) a {
 		text-transform: capitalize;
 	}
 	
-	/* Expanded Menu - End */
-	html .services-body .ifttt-next .menu .submenu li a,
-	html .connections-body .ifttt-next .menu .submenu li a,
-	html .diy-creation-body .ifttt-next .menu .submenu li a {
+	html .services-body .ifttt-next .menu.account-menu .submenu li a,
+	html .connections-body .ifttt-next .menu.account-menu .submenu li a,
+	html .diy-creation-body .ifttt-next .menu.account-menu .submenu li a {
 		color: white;
 	}
 	
+	/* Expanded Menu - End */
 	html .home-body [class^="my_services_view__my-services-container__"] [class^="my_services_view__my-services-list__"] {
 		grid: auto/30% 30% 30%;
 	}
