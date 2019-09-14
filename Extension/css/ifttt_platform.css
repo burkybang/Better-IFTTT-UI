@@ -20,9 +20,19 @@ html .partners-body .logo {
 	margin-left: 0;
 }
 
+html .partners-body.partners-applets-body.new-action .main-sidebar-column,
+html .partners-body.partners-applets-body.edit-action .main-sidebar-column {
+	width: 10%;
+}
+
+html .partners-body.partners-applets-body.new-action .main-content-column,
+html .partners-body.partners-applets-body.edit-action .main-content-column {
+	width: auto;
+}
+
 /* New Layout for Applet View - Start */
-html .partners-body .main-content-column,
-html .partners-body .main-sidebar-column {
+html .partners-body.partners-applets-body .main-content-column,
+html .partners-body.partners-applets-body .main-sidebar-column {
 	width: 100%;
 }
 
