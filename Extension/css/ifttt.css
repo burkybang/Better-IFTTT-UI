@@ -162,10 +162,14 @@ html body {
 	html .ifttt-next .menu.account-menu .submenu li.name .login span {
 		font-size: inherit;
 		color: inherit;
+		margin-left: auto;
+		order: 1;
+		padding: 0 .5em;
 	}
 	
 	html .ifttt-next .menu.account-menu .submenu li.name .profile-avatar-container {
 		margin: -0.8em 0 -0.8em 0.3em;
+		border: 0;
 	}
 	
 	html .ifttt-next .menu.account-menu .submenu li:last-of-type {
