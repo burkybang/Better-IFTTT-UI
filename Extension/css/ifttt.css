@@ -81,26 +81,27 @@ html body {
 	}
 	
 	/* Add On/Off Label to Switches with No Labels - Start */
-	html .switch .switch-label-off,
-	html .switch .switch-label-on {
+	html body:not(.diy-creation-body) .switch .switch-label-off,
+	html body:not(.diy-creation-body) .switch .switch-label-on {
 		font-size: 1.1em;
 	}
 	
-	html .switch-label {
+	html body:not(.diy-creation-body) .switch-label {
 		height: 1.7em;
 		line-height: 2em;
 		font-weight: bold;
 	}
 	
-	html .switch-label-on:before {
+	html body:not(.diy-creation-body) .switch-label-on:before {
 		content: "On";
 	}
 	
-	html .switch-label-off:before {
+	html body:not(.diy-creation-body) .switch-label-off:before {
 		content: "Off";
 	}
 	
-	html .push-notifications .switch, .service-settings .switch,
+	html .push-notifications .switch,
+	html .service-settings .switch,
 	html .connection-config-editor .switch {
 		width: 6em;
 	}
