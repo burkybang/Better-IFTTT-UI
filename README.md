@@ -18,6 +18,8 @@ This project is open source. If you'd like to contribute, please do so. I would 
 
 ### Overall
 - Everything is smaller
+- Header bar is fixed to the top of the screen while scrolling
+- Some buttons such as Back and Settings are also fixed while scrolling
 ___
 
 ### Header Bar
@@ -36,6 +38,7 @@ ___
 ![Home Page (Before)](Screenshots/HomePage_Before.jpg "Home Page (Before)")
 
 #### After
+- Increased main container width
 - Three column layout
 
 ![Home Page (After)](Screenshots/HomePage.jpg "Home Page (After)")
@@ -46,6 +49,7 @@ ___
 ![My Applets (Before)](Screenshots/MyApplets_Before.jpg "My Applets (Before)")
 
 #### After
+- Increased main container width
 - Dynamic number of columns depending on screen width
 - "My Applets" heading at left and "Filter Applets" field at right
 
@@ -58,6 +62,7 @@ ___
 
 #### After
 - Capitalized "Services" in heading
+- Increased main container width
 - Four column layout
 - Service items stylized similar to applet items and category items
 
@@ -69,7 +74,41 @@ ___
 ![Create Applet (Before)](Screenshots/CreateApplet_Before.jpg "Create Applet (Before)")
 
 #### After
+- Increased main container width
 - Fields in two column layout
 - Header bar matches color of service
 
 ![Create Applet (After)](Screenshots/CreateApplet.jpg "Create Applet (After)")
+___
+
+### Platform: Applets
+#### Before
+![Platform: Applets (Before)](Screenshots/PlatformApplets_Before.jpg "Platform: Applets (Before)")
+
+#### After
+- Dynamic number of columns depending on screen width
+- Sidebar is a top bar to cut down on wasted white space
+
+![Platform: Applets (After)](Screenshots/PlatformApplets.jpg "Platform: Applets (After)")
+___
+
+### Platform: View Applet
+#### Before
+![Platform: View Applet (Before)](Screenshots/PlatformViewApplet_Before.jpg "Platform: View Applet (Before)")
+
+#### After
+- Two column layout
+- Sidebar is a top bar to cut down on wasted white space
+
+![Platform: View Applet (After)](Screenshots/PlatformViewApplet.jpg "Platform: View Applet (After)")
+___
+
+### Platform: Edit Applet
+#### Before
+![Platform: Edit Applet (Before)](Screenshots/PlatformEditApplet_Before.jpg "Platform: Edit Applet (Before)")
+
+#### After
+- Increased main container width
+- Prevent code hints from being cut off
+
+![Platform: Edit Applet (After)](Screenshots/PlatformEditApplet.jpg "Platform: Edit Applet (After)")
