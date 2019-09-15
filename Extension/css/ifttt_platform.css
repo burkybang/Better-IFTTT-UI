@@ -20,14 +20,23 @@ html .partners-body .logo {
 	margin-left: 0;
 }
 
-html .partners-body.partners-applets-body.new-action .main-sidebar-column,
-html .partners-body.partners-applets-body.edit-action .main-sidebar-column {
-	width: 10%;
-}
-
-html .partners-body.partners-applets-body.new-action .main-content-column,
-html .partners-body.partners-applets-body.edit-action .main-content-column {
-	width: auto;
+@media (min-width: 1072px) {
+	
+	html .partners-body.partners-applets-body.new-action .main-sidebar-column,
+	html .partners-body.partners-applets-body.edit-action .main-sidebar-column {
+		width: 10%;
+	}
+	
+	html .partners-body.partners-applets-body.new-action .main-content-column,
+	html .partners-body.partners-applets-body.edit-action .main-content-column {
+		width: 70%;
+	}
+	
+	html .partners-body.partners-applets-body .applet-composer .partners-filter-code-apis.partners-filter-code-apis-right-gutter {
+		width: 100%;
+		max-width: calc(20vw - 20px);
+	}
+	
 }
 
 /* New Layout for Applet View - Start */
