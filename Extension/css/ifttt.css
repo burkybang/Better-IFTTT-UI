@@ -4,6 +4,14 @@ html body {
 	color: #000000;
 }
 
+html body.diy-creation-body {
+	--header-background-color: #000000;
+}
+
+html body.diy-creation-body .site-header {
+	background-color: var(--header-background-color) !important;
+}
+
 @media (min-width: 724px) and (min-height: 850px) {
 	
 	/* Floating Header */

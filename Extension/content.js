@@ -99,9 +99,14 @@ if (!window.init) {
       // Wait until finished navigating
       if (document.documentElement.classList.length) return;
       
+      const bodyClass = document.body.classList;
+      
       // Events: navigate, ready, load
       const event = arg && arg.constructor.name == 'Array' ? 'navigate' :
         (arg.type == 'DOMContentLoaded' ? 'ready' : arg.type);
+      
+      if (window.hasOwnProperty('currentStepObserver'))
+        window.currentStepObserver.disconnect();
       
       switch (location.href) {
         case 'https://ifttt.com/':
@@ -114,6 +119,33 @@ if (!window.init) {
           if (event != 'ready')
             location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
           break;
+        default:
+          if (location.href.includes('https://ifttt.com/create') &&
+            bodyClass.contains('diy-creation-body') &&
+            bodyClass.contains('show-action')
+          ) {
+            (() => {
+              const currentStepE = document.querySelector('.current-step > div');
+              if (!currentStepE) {
+                document.body.style.setProperty('--header-background-color', '#000000');
+                return;
+              }
+              
+              const stepChange = () => {
+                const headerLogoE = document.querySelector('.header > .logo');
+                document.body.style.setProperty(
+                  '--header-background-color',
+                  headerLogoE ? headerLogoE.style.backgroundColor : '#000000'
+                );
+              };
+              
+              stepChange();
+              window.currentStepObserver = new MutationObserver(stepChange);
+              window.currentStepObserver.observe(currentStepE, {
+                childList: true,
+              });
+            })();
+          }
       }
     };
     
@@ -123,8 +155,6 @@ if (!window.init) {
     new MutationObserver(pageChange).observe(document.documentElement, {
       attributes: true,
       attributeFilter: ['class'],
-      childList: false,
-      characterData: false
     });
     
   })();
