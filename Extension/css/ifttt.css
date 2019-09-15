@@ -245,6 +245,7 @@ html body {
 		display: grid;
 		grid: auto/50% 50%;
 		grid-gap: 0 1.4em;
+		margin-right: 1.4em;
 		align-items: baseline;
 	}
 	
