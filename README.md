@@ -14,16 +14,62 @@ This project is open source. If you'd like to contribute, please do so. I would 
 - [@burkybang](https://twitter.com/burkybang)
 - [u/burkybang](https://reddit.com/u/burkybang)
 
-## Screenshots
+## Modifications
+
+### Overall
+- Everything is smaller
+___
+
+### Header Bar
+#### Before
+![Header Bar (Before)](Screenshots/HeaderBar_Before.jpg "Header Bar (Before)")
+
+#### After
+- Navigation menu is always visible and expanded horizontally across header
+- All menu items have proper casing
+
+![Header Bar (After)](Screenshots/HeaderBar.jpg "Header Bar (After)")
+___
 
 ### Home Page
-![Home Page](Screenshots/HomePage.jpg "Home Page")
+#### Before
+![Home Page (Before)](Screenshots/HomePage_Before.jpg "Home Page (Before)")
+
+#### After
+- Three column layout
+
+![Home Page (After)](Screenshots/HomePage.jpg "Home Page (After)")
+___
 
 ### My Applets
-![My Applets](Screenshots/MyApplets.jpg "My Applets")
+#### Before
+![My Applets (Before)](Screenshots/MyApplets_Before.jpg "My Applets (Before)")
+
+#### After
+- Dynamic number of columns depending on screen width
+- "My Applets" heading at left and "Filter Applets" field at right
+
+![My Applets (After)](Screenshots/MyApplets.jpg "My Applets (After)")
+___
 
 ### My Services
-![My Services](Screenshots/MyServices.jpg "My Services")
+#### Before
+![My Services (Before)](Screenshots/MyServices_Before.jpg "My Services (Before)")
+
+#### After
+- Capitalized "Services" in heading
+- Four column layout
+- Service items stylized similar to applet items and category items
+
+![My Services (After)](Screenshots/MyServices.jpg "My Services (After)")
+___
 
 ### Create Applet
-![Create Applet](Screenshots/CreateApplet.jpg "Create Applet")
+#### Before
+![Create Applet (Before)](Screenshots/CreateApplet_Before.jpg "Create Applet (Before)")
+
+#### After
+- Fields in two column layout
+- Header bar matches color of service
+
+![Create Applet (After)](Screenshots/CreateApplet.jpg "Create Applet (After)")
