@@ -26,7 +26,7 @@ ___
 
 #### After
 - Navigation menu is always visible and expanded horizontally across header
-- All menu items have proper casing
+- Capitalized "My Services" menu item
 
 ![Header Bar (After)](Screenshots/HeaderBar.jpg "Header Bar (After)")
 ___
