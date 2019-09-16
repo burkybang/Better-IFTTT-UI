@@ -20,11 +20,17 @@ html body.dashboard-body.applets-action .account-menu li a[href="https://ifttt.c
 html body.dashboard-body.services-action .account-menu li a[href="https://ifttt.com/my_services"],
 html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
 	color: #09f;
-	border-color: #09f;
+	box-shadow: 0 0.275em #09f;
 }
 
 html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
-	border-color: #ffffff;
+	box-shadow: 0 0.275em #fff;
+}
+
+@media (max-width: 1443px) {
+	html body .account-menu li a {
+		box-shadow: none !important;
+	}
 }
 
 html .ifttt-next .menu.account-menu .submenu li:not(.name) a,
@@ -142,11 +148,6 @@ html .my-services h1 {
 	
 	html .ifttt-next.site-header .navigation .search-group .search-field .input input[type="text"] {
 		max-width: calc(100vw - 1260px);
-	}
-	
-	html body .account-menu li a,
-	html body a.my_service {
-		border-bottom: solid 0.275em transparent;
 	}
 	
 	/* Expanded Menu - Start */
