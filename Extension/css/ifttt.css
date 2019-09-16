@@ -12,23 +12,24 @@ html body.diy-creation-body .site-header {
 	background-color: var(--header-background-color) !important;
 }
 
-html body .account-menu li a,
-html body a.my_service {
-	border-bottom: solid 0.275em transparent;
-}
-
 html body .account-menu li a.active,
 html body.home-body a.my_service,
 html body.settings-body .account-menu li a[href="https://ifttt.com/settings"],
 html body.activities-body .account-menu li a[href="https://ifttt.com/activity"],
 html body.dashboard-body.applets-action .account-menu li a[href="https://ifttt.com/my_applets"],
-html body.dashboard-body.services-action .account-menu li a[href="https://ifttt.com/my_services"] {
+html body.dashboard-body.services-action .account-menu li a[href="https://ifttt.com/my_services"],
+html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
 	color: #09f;
 	border-color: #09f;
 }
 
 html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
 	border-color: #ffffff;
+}
+
+html .ifttt-next .menu.account-menu .submenu li:not(.name) a,
+html .my-services h1 {
+	text-transform: capitalize;
 }
 
 @media (min-width: 724px) and (min-height: 850px) {
@@ -143,6 +144,11 @@ html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] 
 		max-width: calc(100vw - 1260px);
 	}
 	
+	html body .account-menu li a,
+	html body a.my_service {
+		border-bottom: solid 0.275em transparent;
+	}
+	
 	/* Expanded Menu - Start */
 	html .ifttt-next .menu.account-menu {
 		position: static;
@@ -212,11 +218,6 @@ html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] 
 		height: 2em;
 		display: flex;
 		align-items: center;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu li:not(.name) a,
-	html .my-services h1 {
-		text-transform: capitalize;
 	}
 	
 	html .services-body .ifttt-next .menu.account-menu .submenu li a,
