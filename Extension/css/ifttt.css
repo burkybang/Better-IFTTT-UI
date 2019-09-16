@@ -12,6 +12,25 @@ html body.diy-creation-body .site-header {
 	background-color: var(--header-background-color) !important;
 }
 
+html body .account-menu li a,
+html body a.my_service {
+	border-bottom: solid 0.275em transparent;
+}
+
+html body .account-menu li a.active,
+html body.home-body a.my_service,
+html body.settings-body .account-menu li a[href="https://ifttt.com/settings"],
+html body.activities-body .account-menu li a[href="https://ifttt.com/activity"],
+html body.dashboard-body.applets-action .account-menu li a[href="https://ifttt.com/my_applets"],
+html body.dashboard-body.services-action .account-menu li a[href="https://ifttt.com/my_services"] {
+	color: #09f;
+	border-color: #09f;
+}
+
+html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
+	border-color: #ffffff;
+}
+
 @media (min-width: 724px) and (min-height: 850px) {
 	
 	/* Floating Header */
