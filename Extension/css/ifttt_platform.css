@@ -95,6 +95,10 @@ html .applet-composer.applet-composer-with-right-gutter {
 		z-index: 9999;
 	}
 	
+	html body#partners-docs-body nav.sidebar-nav.is_stuck {
+		margin-top: 4.5em;
+	}
+	
 }
 
 
