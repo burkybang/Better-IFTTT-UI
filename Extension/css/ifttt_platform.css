@@ -75,6 +75,10 @@ html .partners-connections-body .applet-preview-applet-card .web-applet-card {
 	width: 19em;
 }
 
+html body#partners-docs-body .docs-main-content {
+	margin-bottom: calc(100vh - 23em);
+}
+
 /* New Layout for Applet View - End */
 
 html .applet-composer.applet-composer-with-right-gutter {
