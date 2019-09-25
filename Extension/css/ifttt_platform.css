@@ -108,7 +108,7 @@ html .applet-composer.applet-composer-with-right-gutter {
 	html .menu.account-menu .submenu {
 		visibility: visible;
 		position: absolute;
-		right: 9.3em;
+		right: 9em;
 		top: calc(1em + 3px);
 		box-shadow: none;
 		height: 2.4em;
@@ -116,6 +116,10 @@ html .applet-composer.applet-composer-with-right-gutter {
 		align-items: center;
 		background-color: transparent;
 		padding: 0;
+	}
+	
+	html body#partners-home-body .menu.account-menu .submenu {
+		right: 15.9em;
 	}
 	
 	html .menu.account-menu .submenu li {
