@@ -145,6 +145,16 @@ if (!window.init) {
                 childList: true,
               });
             })();
+          } else if (location.href.includes('https://platform.ifttt.com/docs')) {
+            if (event != 'load') {
+              // Scroll down a little after clicking on sidebar links to account for floating header
+              const links = document.querySelectorAll('.sidebar-nav a');
+              for (const link of links)
+                link.addEventListener('click', async () => {
+                  await delay(0);
+                  window.scrollBy(0, -80);
+                });
+            }
           }
       }
     };
