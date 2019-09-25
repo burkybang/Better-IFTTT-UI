@@ -66,6 +66,7 @@ html body:not(#partners-docs-body) .sidebar-nav a {
 
 html body:not(#partners-docs-body) .sidebar-nav li.active a {
 	border-bottom-width: 0.275em;
+	border-bottom-color: #09f;
 }
 
 html .partners-body.partners-applets-body.show-action .applets-index-applet-cards .web-applet-card,
