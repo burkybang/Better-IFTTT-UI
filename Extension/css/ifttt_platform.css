@@ -45,18 +45,18 @@ html .partners-body.partners-applets-body .main-sidebar-column {
 	width: 100%;
 }
 
-html .sidebar-nav {
+html body:not(#partners-docs-body) .sidebar-nav {
 	display: flex;
 }
 
-html .sidebar-nav ul {
+html body:not(#partners-docs-body) .sidebar-nav ul {
 	display: flex;
 	align-self: center;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-html .sidebar-nav a {
+html body:not(#partners-docs-body) .sidebar-nav a {
 	margin: 0;
 	padding: 0.25em 1em;
 	white-space: nowrap;
@@ -64,7 +64,7 @@ html .sidebar-nav a {
 	border-bottom: solid 0.275em transparent;
 }
 
-html .sidebar-nav li.active a {
+html body:not(#partners-docs-body) .sidebar-nav li.active a {
 	border-bottom-width: 0.275em;
 }
 
