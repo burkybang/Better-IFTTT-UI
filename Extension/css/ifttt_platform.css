@@ -86,6 +86,10 @@ html .applet-composer.applet-composer-with-right-gutter {
 	max-width: 70em;
 }
 
+html .partners-contact-sales-body .site-header .container.web {
+	max-width: 100%;
+}
+
 @media (min-width: 724px) and (min-height: 850px) {
 	
 	/* Floating Header */
