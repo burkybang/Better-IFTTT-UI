@@ -114,10 +114,15 @@ html .applet-composer.applet-composer-with-right-gutter {
 		position: static;
 	}
 	
+	html .menu.account-menu > .name,
+	html .menu.account-menu li.name svg {
+		display: none;
+	}
+	
 	html .menu.account-menu .submenu {
 		visibility: visible;
 		position: absolute;
-		right: 9em;
+		right: 1.25em;
 		top: calc(1em + 3px);
 		box-shadow: none;
 		height: 2.4em;
@@ -128,7 +133,17 @@ html .applet-composer.applet-composer-with-right-gutter {
 	}
 	
 	html body#partners-home-body .menu.account-menu .submenu {
-		right: 15.9em;
+		right: 10.8em;
+	}
+	
+	html .right-group > a {
+		padding: 0.4375em 1em;
+		margin-left: 1em;
+		margin-right: 0 !important;
+		background-color: #ffffff;
+		color: #000000;
+		font-size: 1em;
+		border-radius: 2.5em;
 	}
 	
 	html .menu.account-menu .submenu li {
@@ -139,9 +154,19 @@ html .applet-composer.applet-composer-with-right-gutter {
 		cursor: default;
 	}
 	
-	html .menu.account-menu li.name svg,
 	html .menu.account-menu .submenu li.name {
-		display: none;
+		order: 1;
+	}
+	
+	html .menu.account-menu .submenu li.name .avatar {
+		max-width: 2.4em;
+		max-height: 2.4em;
+		margin: -0.3em 0 -0.9em 0;
+	}
+	
+	html .menu.account-menu .submenu li.name .login {
+		color: white;
+		font-size: 0.9em;
 	}
 	
 	html .menu.account-menu .submenu li:last-of-type {
