@@ -108,44 +108,53 @@ if (!window.init) {
       if (window.hasOwnProperty('currentStepObserver'))
         window.currentStepObserver.disconnect();
       
-      switch (location.href) {
-        case 'https://ifttt.com/':
-          if (event != 'load')
-            document.title = document.title.replace('My services - ', '');
-          break;
-        case 'https://ifttt.com/my_applets':
-          if (event == 'navigate')
-            await delay(0);
-          if (event != 'ready')
-            location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
-          break;
-        default:
-          if (location.href.includes('https://ifttt.com/create') &&
-            bodyClass.contains('diy-creation-body') &&
-            bodyClass.contains('show-action')
-          ) {
-            (() => {
-              const currentStepE = document.querySelector('.current-step > div');
-              if (!currentStepE) {
-                document.body.style.setProperty('--header-background-color', '#000000');
-                return;
+      switch (window.origin) {
+        case 'https://ifttt.com':
+          
+          switch (location.href) {
+            case 'https://ifttt.com/':
+              if (event != 'load')
+                document.title = document.title.replace('My services - ', '');
+              break;
+            case 'https://ifttt.com/my_applets':
+              if (event == 'navigate')
+                await delay(0);
+              if (event != 'ready')
+                location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
+              break;
+            default:
+              if (location.href.indexOf('https://ifttt.com/create') === 0
+                && bodyClass.contains('diy-creation-body')
+                && bodyClass.contains('show-action')
+              ) {
+                (() => {
+                  const currentStepE = document.querySelector('.current-step > div');
+                  if (!currentStepE) {
+                    document.body.style.setProperty('--header-background-color', '#000000');
+                    return;
+                  }
+                  
+                  const stepChange = () => {
+                    const headerLogoE = document.querySelector('.header > .logo');
+                    document.body.style.setProperty(
+                      '--header-background-color',
+                      headerLogoE ? headerLogoE.style.backgroundColor : '#000000'
+                    );
+                  };
+                  
+                  stepChange();
+                  window.currentStepObserver = new MutationObserver(stepChange);
+                  window.currentStepObserver.observe(currentStepE, {
+                    childList: true,
+                  });
+                })();
               }
-              
-              const stepChange = () => {
-                const headerLogoE = document.querySelector('.header > .logo');
-                document.body.style.setProperty(
-                  '--header-background-color',
-                  headerLogoE ? headerLogoE.style.backgroundColor : '#000000'
-                );
-              };
-              
-              stepChange();
-              window.currentStepObserver = new MutationObserver(stepChange);
-              window.currentStepObserver.observe(currentStepE, {
-                childList: true,
-              });
-            })();
-          } else if (location.href.includes('https://platform.ifttt.com/docs')) {
+          }
+          
+          break;
+        case 'https://platform.ifttt.com':
+          
+          if (location.href.indexOf('https://platform.ifttt.com/docs') === 0) {
             if (event != 'load') {
               // Scroll down a little after clicking on sidebar links to account for floating header
               const links = document.querySelectorAll('.sidebar-nav a');
@@ -156,6 +165,8 @@ if (!window.init) {
                 });
             }
           }
+          
+          break;
       }
     };
     
