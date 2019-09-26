@@ -27,7 +27,7 @@
   };
   
   const loadLocalCss = (id, file) => {
-    const href = chrome.extension.getURL(chrome.runtime.getURL('css/' + file + '.css') + '?_=' + Date.now());
+    const href = chrome.runtime.getURL('css/' + file + '.css') + '?_=' + Date.now();
     
     const existingStyle = document.getElementById(id);
     if (existingStyle)
