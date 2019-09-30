@@ -136,8 +136,12 @@ html .partners-contact-sales-body .site-header .container.web {
 		padding: 0;
 	}
 	
-	html body#partners-home-body .menu.account-menu .submenu {
-		right: 10.8em;
+	html .right-group a[title="Dashboard"] + div .menu.account-menu .submenu {
+		margin-right: calc(1em + 117px);
+	}
+	
+	html .right-group a.contact-us + div .menu.account-menu .submenu {
+		margin-right: calc(1em + 113px);
 	}
 	
 	html .right-group > a {
