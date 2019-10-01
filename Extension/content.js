@@ -128,6 +128,8 @@ if (!window.init) {
                 && bodyClass.contains('show-action')
               ) {
                 (() => {
+                  if (event == 'load') return;
+                  
                   const currentStepE = document.querySelector('.current-step > div');
                   if (!currentStepE) {
                     document.body.style.setProperty('--header-background-color', '#000000');
