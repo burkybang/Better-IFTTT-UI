@@ -13,6 +13,7 @@ html body.diy-creation-body .service-connection .btn,
 html .site-footer .partner-banner a.platform-cta-banner,
 html .site-footer > div {
 	background-color: var(--header-background-color) !important;
+	transition: background-color 0.3s !important;
 }
 
 html body .account-menu li a.active,
