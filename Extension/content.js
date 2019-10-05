@@ -142,6 +142,7 @@ if (!window.init) {
                       '--header-background-color',
                       headerLogoE ? headerLogoE.style.backgroundColor : '#000000'
                     );
+                    window.scrollTo(0, 0);
                   };
                   
                   stepChange();
