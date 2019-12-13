@@ -1,4 +1,26 @@
 (async () => {
+  /**
+   * @param {number} ms
+   */
+  const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+  
+  /**
+   * Inject JavaScript into the page's context
+   *
+   * @param {object} obj
+   * @param {function} obj.inject
+   * @param {object} [obj.data]
+   * @param {function} [obj.callback]
+   */
+  const injectJavaScript = obj => {
+    if (!obj.hasOwnProperty('inject')) return;
+    
+    const inject = ('' + obj.inject).replace(/\s*\/\/.*$/gm, '');
+    const data = obj.hasOwnProperty('data') ? JSON.stringify(obj.data) : '{}';
+    
+    location.href = 'javascript:(' + inject + ')(' + data + ');';
+  };
+  
   const dev = localStorage.getItem('dev') == 'true';
   
   function minifyCss(css) {
@@ -88,11 +110,23 @@
     }
   }
   
+  await delay(100);
+  
+  injectJavaScript({
+    inject: () => {
+      if (window.hasOwnProperty('App') && window.App.hasOwnProperty('authenticityToken'))
+        localStorage.setItem('authenticityToken', window.App.authenticityToken);
+    },
+  });
+  
 })();
 
 
 if (!window.init) {
   (() => {
+    /**
+     * @param {number} ms
+     */
     const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
     
     const pageChange = async arg => {
@@ -151,6 +185,85 @@ if (!window.init) {
                     childList: true,
                   });
                 })();
+              } else if (bodyClass.contains('services-body')
+                && bodyClass.contains('show-action')
+                && bodyClass.contains('service-landing-page')
+              ) {
+                (async () => {
+                  if (event == 'load') return;
+                  
+                  // Example Query: '\nquery($serviceModuleName: String!) {\nchannel(module_name: $serviceModuleName) {\nid\nbrand_color\nvariant_image_url\nmonochrome_image_url\nmodule_name\nname\ntext_only_description\npreview_mode\nconnected\ncan_be_autoactivated\npublic_triggers {\nid\nname\ndescription\nmodule_name\nweight\ntrigger_fields {\nname\nlabel\nrequired\nshareable\nfield_ui_type\nnormalized_field_type\nhelper_text\n}\n}\npublic_actions {\nid\nname\ndescription\nmodule_name\nweight\naction_fields {\nname\nlabel\nrequired\nshareable\nfield_ui_type\nnormalized_field_type\nhelper_text\n}\nincompatible_triggers\n}\n}\n}\n'
+                  
+                  if (document.querySelector('.triggers-actions-container')) return;
+                  
+                  setTimeout(() => {
+                    document.querySelectorAll('div[data-react-class="App.Comps.MyServiceView"]')[0].insertAdjacentHTML('afterbegin', '<h2 style="text-align:center;">My Applets</h2>');
+                  }, 100);
+                  
+                  var authenticityToken = localStorage.getItem('authenticityToken');
+                  if (!authenticityToken) return;
+                  var serviceResponse = await fetch('https://ifttt.com/graph/query', {
+                    'credentials': 'include',
+                    'headers': {
+                      'accept': '*/*',
+                      'accept-language': 'en-AU,en-US;q=0.9,en;q=0.8',
+                      'content-type': 'application/json',
+                      'sec-fetch-mode': 'cors',
+                      'sec-fetch-site': 'same-origin',
+                      'x-requested-with': 'XMLHttpRequest'
+                    },
+                    'referrerPolicy': 'strict-origin-when-cross-origin',
+                    'body': JSON.stringify({
+                      'query': '\nquery($serviceModuleName: String!) {\nchannel(module_name: $serviceModuleName) {\npublic_triggers {\nname\ndescription\ntrigger_fields {\nlabel\nrequired\n}\n}\npublic_actions {\nname\ndescription\naction_fields {\nlabel\nrequired\n}\n}\n}\n}\n',
+                      'variables': {
+                        'serviceModuleName': new URL(location.href).pathname.replace(/^\//, '')
+                      },
+                      'authenticity_token': authenticityToken
+                    }),
+                    'method': 'POST',
+                    'mode': 'cors'
+                  });
+                  var serviceJSON = await serviceResponse.json();
+                  var html = '';
+                  if (
+                    !serviceJSON ||
+                    !serviceJSON.hasOwnProperty('data') ||
+                    !serviceJSON.data.hasOwnProperty('channel') ||
+                    !serviceJSON.data.channel.hasOwnProperty('public_triggers') ||
+                    !serviceJSON.data.channel.hasOwnProperty('public_actions')
+                  ) return;
+                  html += '<h2>Triggers</h2><br/>';
+                  if (serviceJSON.data.channel.public_triggers.length) {
+                    html += serviceJSON.data.channel.public_triggers.map(trigger =>
+                      '<div class="triggers-actions">' +
+                      '<div class="title">' + trigger.name + '</div>' +
+                      '<div class="description">' + trigger.description + '</div>' +
+                      (trigger.hasOwnProperty('trigger_fields') && trigger.trigger_fields.length ?
+                        '<div class="fields"><i>Fields:</i> ' + trigger.trigger_fields.map(field => field.label).join(', ') + '</div>'
+                        : '') +
+                      '</div>'
+                    ).join('');
+                  } else {
+                    html += '<div class="triggers-actions"><span class="title">None</span></div>';
+                  }
+                  html += '<h2>Actions</h2><br/>';
+                  if (serviceJSON.data.channel.public_actions.length) {
+                    html += serviceJSON.data.channel.public_actions.map(action =>
+                      '<div class="triggers-actions">' +
+                      '<div class="title">' + action.name + '</div>' +
+                      '<div class="description">' + action.description + '</div>' +
+                      (action.hasOwnProperty('action_fields') && action.action_fields.length ?
+                        '<div class="fields"><i>Fields:</i> ' + action.action_fields.map(field => field.label).join(', ') + '</div>'
+                        : '') +
+                      '</div>'
+                    ).join('');
+                  } else {
+                    html += '<div class="triggers-actions"><span class="title">None</span></div>';
+                  }
+                  if (html.length)
+                    document.querySelectorAll('body > .container.web')[0].insertAdjacentHTML('afterbegin', '<section class="triggers-actions-container"><div class="web-applet-cards">' + html + '</div></section>');
+                })();
+                
               }
           }
           
