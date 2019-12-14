@@ -225,7 +225,8 @@ html .my-services h1 {
 	
 	html .services-body .ifttt-next .menu.account-menu .submenu li a,
 	html .connections-body .ifttt-next .menu.account-menu .submenu li a,
-	html .diy-creation-body .ifttt-next .menu.account-menu .submenu li a {
+	html .diy-creation-body .ifttt-next .menu.account-menu .submenu li a,
+	html .service-settings-body .ifttt-next .menu.account-menu .submenu li a {
 		color: white !important;
 	}
 	
