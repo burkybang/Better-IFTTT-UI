@@ -50,10 +50,5 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (typeof request.url !== 'string') return;
     httpRequest(request.url).then(sendResponse);
     return true;
-  } /*else if (request.action == 'execute-script') {
-    sendResponse(sender);
-    chrome.tabs.executeScript(sender.tab.id, {
-      code: 'console.log(window.App);'
-    });
-  }*/
+  }
 });
