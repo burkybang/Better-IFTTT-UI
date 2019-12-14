@@ -356,7 +356,8 @@ html .dashboard-body.services-action .my-services .services-list .service-item a
 	fill: white;
 }
 
-html .services-body.show-action .triggers-actions-container {
+html .services-body.show-action .triggers-actions-container,
+html .diy-creation-body.show-action .triggers-actions-container {
 	margin-bottom: 4em;
 }
 
@@ -364,24 +365,34 @@ html .services-body.show-action .triggers-actions-container .web-applet-cards {
 	max-width: 36em;
 }
 
+html .diy-creation-body.show-action .triggers-actions-container .web-applet-cards {
+	max-width: 500px;
+	margin-top: 1em;
+}
+
+html .diy-creation-body.show-action .triggers-actions,
 html .services-body.show-action .triggers-actions {
 	margin-bottom: 1em;
 	width: 100%;
+	text-align: left;
 }
 
-html .services-body.show-action .triggers-actions .title {
+html .services-body.show-action .triggers-actions .title,
+html .diy-creation-body.show-action .triggers-actions .title {
 	font-size: 1.125em;
 	font-weight: 800;
 	line-height: 1.125;
 }
 
-html .services-body.show-action .triggers-actions .description {
+html .services-body.show-action .triggers-actions .description,
+html .diy-creation-body.show-action .triggers-actions .description {
 	font-size: 1em;
 	font-weight: 700;
 	margin-top: 0.2em;
 }
 
-html .services-body.show-action .triggers-actions .fields {
+html .services-body.show-action .triggers-actions .fields,
+html .diy-creation-body.show-action .triggers-actions .fields {
 	font-size: 1em;
 	margin-top: 0.2em;
 }
