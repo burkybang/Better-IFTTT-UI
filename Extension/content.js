@@ -10,7 +10,6 @@
    * @param {object} obj
    * @param {function} obj.inject
    * @param {object} [obj.data]
-   * @param {function} [obj.callback]
    */
   const injectJavaScript = obj => {
     if (!obj.hasOwnProperty('inject')) return;
@@ -18,7 +17,10 @@
     const inject = ('' + obj.inject).replace(/\s*\/\/.*$/gm, '');
     const data = obj.hasOwnProperty('data') ? JSON.stringify(obj.data) : '{}';
     
-    location.href = 'javascript:(' + inject + ')(' + data + ');';
+    const script = document.createElement('script');
+    script.appendChild(document.createTextNode('(' + inject + ')(' + data + ');'));
+    (document.head || document.body || document.documentElement).appendChild(script);
+    script.parentNode.removeChild(script);
   };
   
   const dev = localStorage.getItem('dev') == 'true';
@@ -197,12 +199,14 @@ if (!window.init) {
                   if (document.querySelector('.triggers-actions-container')) return;
                   
                   setTimeout(() => {
-                    document.querySelectorAll('div[data-react-class="App.Comps.MyServiceView"]')[0].insertAdjacentHTML('afterbegin', '<h2 style="text-align:center;">My Applets</h2>');
+                    const elem = document.querySelector('div[data-react-class="App.Comps.MyServiceView"]');
+                    if (!elem) return;
+                    elem.insertAdjacentHTML('afterbegin', '<h2 style="text-align:center;">My Applets</h2>');
                   }, 100);
                   
-                  var authenticityToken = localStorage.getItem('authenticityToken');
+                  const authenticityToken = localStorage.getItem('authenticityToken');
                   if (!authenticityToken) return;
-                  var serviceResponse = await fetch('https://ifttt.com/graph/query', {
+                  const serviceResponse = await fetch('https://ifttt.com/graph/query', {
                     'credentials': 'include',
                     'headers': {
                       'accept': '*/*',
@@ -214,7 +218,7 @@ if (!window.init) {
                     },
                     'referrerPolicy': 'strict-origin-when-cross-origin',
                     'body': JSON.stringify({
-                      'query': '\nquery($serviceModuleName: String!) {\nchannel(module_name: $serviceModuleName) {\npublic_triggers {\nname\ndescription\ntrigger_fields {\nlabel\nrequired\n}\n}\npublic_actions {\nname\ndescription\naction_fields {\nlabel\nrequired\n}\n}\n}\n}\n',
+                      'query': 'query($serviceModuleName: String!) {channel(module_name: $serviceModuleName) {public_triggers {name description trigger_fields {label required}}public_actions {name description action_fields {label required}}}}',
                       'variables': {
                         'serviceModuleName': new URL(location.href).pathname.replace(/^\//, '')
                       },
@@ -223,8 +227,8 @@ if (!window.init) {
                     'method': 'POST',
                     'mode': 'cors'
                   });
-                  var serviceJSON = await serviceResponse.json();
-                  var html = '';
+                  const serviceJSON = await serviceResponse.json();
+                  let html = '';
                   if (
                     !serviceJSON ||
                     !serviceJSON.hasOwnProperty('data') ||
@@ -260,8 +264,11 @@ if (!window.init) {
                   } else {
                     html += '<div class="triggers-actions"><span class="title">None</span></div>';
                   }
-                  if (html.length)
-                    document.querySelectorAll('body > .container.web')[0].insertAdjacentHTML('afterbegin', '<section class="triggers-actions-container"><div class="web-applet-cards">' + html + '</div></section>');
+                  if (html.length) {
+                    const elem = document.querySelector('body > .container.web');
+                    if (elem)
+                      elem.insertAdjacentHTML('afterbegin', '<section class="triggers-actions-container"><div class="web-applet-cards">' + html + '</div></section>');
+                  }
                 })();
                 
               }
