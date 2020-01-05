@@ -159,28 +159,11 @@ if (!window.init) {
                 location.href = 'javascript:(()=>{const el=document.querySelector(".web-applet-cards.my-applets.js-dashboard-applet-grid");if(el)el.dispatchEvent(new CustomEvent("force-resize"));})();';
               break;
             default:
-              const appendTriggersActions = () => {
-                (async () => {
-                  if (event == 'load') return;
-                  
-                  const isConnect = location.href.indexOf('https://ifttt.com/create/connect-') === 0;
-                  
-                  // Example Query: '\nquery($serviceModuleName: String!) {\nchannel(module_name: $serviceModuleName) {\nid\nbrand_color\nvariant_image_url\nmonochrome_image_url\nmodule_name\nname\ntext_only_description\npreview_mode\nconnected\ncan_be_autoactivated\npublic_triggers {\nid\nname\ndescription\nmodule_name\nweight\ntrigger_fields {\nname\nlabel\nrequired\nshareable\nfield_ui_type\nnormalized_field_type\nhelper_text\n}\n}\npublic_actions {\nid\nname\ndescription\nmodule_name\nweight\naction_fields {\nname\nlabel\nrequired\nshareable\nfield_ui_type\nnormalized_field_type\nhelper_text\n}\nincompatible_triggers\n}\n}\n}\n'
-                  
-                  const serviceModuleName = new URL(location.href).pathname.replace(/^\/(create\/connect-)?/, '');
-                  
-                  if (document.querySelector('.triggers-actions-container[data-service-module-name="' + serviceModuleName + '"]')) return;
-                  const oldElem = document.querySelector('.triggers-actions-container');
-                  if (oldElem)
-                    oldElem.parentNode.removeChild(oldElem);
-                  
-                  if (!isConnect)
-                    setTimeout(() => {
-                      const elem = document.querySelector('div[data-react-class="App.Comps.MyServiceView"]');
-                      if (!elem) return;
-                      elem.insertAdjacentHTML('afterbegin', '<h2 style="text-align:center;">My Applets</h2>');
-                    }, 100);
-                  
+              if (!window.hasOwnProperty('getTriggersActionsCache'))
+                window.getTriggersActionsCache = {};
+              
+              const getTriggersActions = async serviceModuleName => {
+                if (!window.getTriggersActionsCache.hasOwnProperty(serviceModuleName)) {
                   const authenticityToken = localStorage.getItem('authenticityToken');
                   if (!authenticityToken) return;
                   const serviceResponse = await fetch('https://ifttt.com/graph/query', {
@@ -204,53 +187,79 @@ if (!window.init) {
                     'method': 'POST',
                     'mode': 'cors'
                   });
-                  const serviceJSON = await serviceResponse.json();
-                  let html = '';
-                  if (
-                    !serviceJSON ||
-                    !serviceJSON.hasOwnProperty('data') ||
-                    !serviceJSON.data.hasOwnProperty('channel') ||
-                    !serviceJSON.data.channel ||
-                    !serviceJSON.data.channel.hasOwnProperty('public_triggers') ||
-                    !serviceJSON.data.channel.hasOwnProperty('public_actions')
-                  ) return;
-                  html += '<h2>Triggers</h2><br/>';
-                  if (serviceJSON.data.channel.public_triggers.length) {
-                    html += serviceJSON.data.channel.public_triggers.map(trigger =>
-                      '<div class="triggers-actions">' +
-                      '<div class="title">' + trigger.name + '</div>' +
-                      '<div class="description">' + trigger.description + '</div>' +
-                      (trigger.hasOwnProperty('trigger_fields') && trigger.trigger_fields.length ?
-                        '<div class="fields"><i>Fields:</i> ' + trigger.trigger_fields.map(field => field.label).join(', ') + '</div>'
-                        : '') +
-                      '</div>'
-                    ).join('');
-                  } else {
-                    html += '<div class="triggers-actions"><span class="title">None</span></div>';
-                  }
-                  html += '<h2>Actions</h2><br/>';
-                  if (serviceJSON.data.channel.public_actions.length) {
-                    html += serviceJSON.data.channel.public_actions.map(action =>
-                      '<div class="triggers-actions">' +
-                      '<div class="title">' + action.name + '</div>' +
-                      '<div class="description">' + action.description + '</div>' +
-                      (action.hasOwnProperty('action_fields') && action.action_fields.length ?
-                        '<div class="fields"><i>Fields:</i> ' + action.action_fields.map(field => field.label).join(', ') + '</div>'
-                        : '') +
-                      '</div>'
-                    ).join('');
-                  } else {
-                    html += '<div class="triggers-actions"><span class="title">None</span></div>';
-                  }
-                  if (html.length) {
-                    const elem = document.querySelector('body > .container.web' + (isConnect ? ' > #composer > .diy-composer' : ''));
-                    if (elem)
-                      elem.insertAdjacentHTML(
-                        isConnect ? 'beforeend' : 'afterbegin',
-                        '<section class="triggers-actions-container" data-service-module-name="' + serviceModuleName + '"><div class="web-applet-cards">' + html + '</div></section>'
-                      );
-                  }
-                })();
+                  window.getTriggersActionsCache[serviceModuleName] = await serviceResponse.json();
+                }
+                
+                return window.getTriggersActionsCache[serviceModuleName];
+              };
+              
+              const appendTriggersActions = async () => {
+                if (event == 'load') return;
+                
+                const isConnect = location.href.indexOf('https://ifttt.com/create/connect-') === 0;
+                
+                // Example Query: '\nquery($serviceModuleName: String!) {\nchannel(module_name: $serviceModuleName) {\nid\nbrand_color\nvariant_image_url\nmonochrome_image_url\nmodule_name\nname\ntext_only_description\npreview_mode\nconnected\ncan_be_autoactivated\npublic_triggers {\nid\nname\ndescription\nmodule_name\nweight\ntrigger_fields {\nname\nlabel\nrequired\nshareable\nfield_ui_type\nnormalized_field_type\nhelper_text\n}\n}\npublic_actions {\nid\nname\ndescription\nmodule_name\nweight\naction_fields {\nname\nlabel\nrequired\nshareable\nfield_ui_type\nnormalized_field_type\nhelper_text\n}\nincompatible_triggers\n}\n}\n}\n'
+                
+                const serviceModuleName = new URL(location.href).pathname.replace(/^\/(create\/connect-)?/, '');
+                
+                if (document.querySelector('.triggers-actions-container[data-service-module-name="' + serviceModuleName + '"]')) return;
+                const oldElem = document.querySelector('.triggers-actions-container');
+                if (oldElem)
+                  oldElem.parentNode.removeChild(oldElem);
+                
+                if (!isConnect)
+                  setTimeout(() => {
+                    const elem = document.querySelector('div[data-react-class="App.Comps.MyServiceView"]');
+                    if (!elem) return;
+                    elem.insertAdjacentHTML('afterbegin', '<h2 style="text-align:center;">My Applets</h2>');
+                  }, 100);
+                
+                let html = '';
+                const serviceJSON = await getTriggersActions(serviceModuleName);
+                if (
+                  !serviceJSON ||
+                  !serviceJSON.hasOwnProperty('data') ||
+                  !serviceJSON.data.hasOwnProperty('channel') ||
+                  !serviceJSON.data.channel ||
+                  !serviceJSON.data.channel.hasOwnProperty('public_triggers') ||
+                  !serviceJSON.data.channel.hasOwnProperty('public_actions')
+                ) return;
+                html += '<h2>Triggers</h2><br/>';
+                if (serviceJSON.data.channel.public_triggers.length) {
+                  html += serviceJSON.data.channel.public_triggers.map(trigger =>
+                    '<div class="triggers-actions">' +
+                    '<div class="title">' + trigger.name + '</div>' +
+                    '<div class="description">' + trigger.description + '</div>' +
+                    (trigger.hasOwnProperty('trigger_fields') && trigger.trigger_fields.length ?
+                      '<div class="fields"><i>Fields:</i> ' + trigger.trigger_fields.map(field => field.label).join(', ') + '</div>'
+                      : '') +
+                    '</div>'
+                  ).join('');
+                } else {
+                  html += '<div class="triggers-actions"><span class="title">None</span></div>';
+                }
+                html += '<h2>Actions</h2><br/>';
+                if (serviceJSON.data.channel.public_actions.length) {
+                  html += serviceJSON.data.channel.public_actions.map(action =>
+                    '<div class="triggers-actions">' +
+                    '<div class="title">' + action.name + '</div>' +
+                    '<div class="description">' + action.description + '</div>' +
+                    (action.hasOwnProperty('action_fields') && action.action_fields.length ?
+                      '<div class="fields"><i>Fields:</i> ' + action.action_fields.map(field => field.label).join(', ') + '</div>'
+                      : '') +
+                    '</div>'
+                  ).join('');
+                } else {
+                  html += '<div class="triggers-actions"><span class="title">None</span></div>';
+                }
+                if (html.length) {
+                  const elem = document.querySelector('body > .container.web' + (isConnect ? ' > #composer > .diy-composer' : ''));
+                  if (elem)
+                    elem.insertAdjacentHTML(
+                      isConnect ? 'beforeend' : 'afterbegin',
+                      '<section class="triggers-actions-container" data-service-module-name="' + serviceModuleName + '"><div class="web-applet-cards">' + html + '</div></section>'
+                    );
+                }
               };
               
               if (location.href.indexOf('https://ifttt.com/create') === 0
@@ -277,7 +286,7 @@ if (!window.init) {
                       if (location.href.indexOf('https://ifttt.com/create/connect-') === 0 &&
                         bodyClass.contains('diy-creation-body') &&
                         bodyClass.contains('show-action')
-                      ) appendTriggersActions();
+                      ) appendTriggersActions().then();
                     }, 100);
                   };
                   
@@ -291,7 +300,13 @@ if (!window.init) {
                 bodyClass.contains('services-body') &&
                 bodyClass.contains('show-action') &&
                 bodyClass.contains('service-landing-page')
-              ) appendTriggersActions();
+              ) {
+                appendTriggersActions().then();
+              } else {
+                const triggersActionsContainer = document.querySelector('.triggers-actions-container');
+                if (triggersActionsContainer)
+                  triggersActionsContainer.parentNode.removeChild(triggersActionsContainer);
+              }
           }
           
           break;
