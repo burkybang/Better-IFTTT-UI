@@ -275,6 +275,10 @@ if (!window.init) {
                     return;
                   }
                   
+                  const triggersActionsContainer = document.querySelector('.triggers-actions-container');
+                  if (triggersActionsContainer)
+                    triggersActionsContainer.parentNode.removeChild(triggersActionsContainer);
+                  
                   const stepChange = () => {
                     const headerLogoE = document.querySelector('.header > .logo');
                     document.body.style.setProperty(
