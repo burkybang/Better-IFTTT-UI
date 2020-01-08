@@ -141,7 +141,7 @@ html .partners-contact-sales-body .site-header .container.web {
 	}
 	
 	html .right-group a.contact-us + div .menu.account-menu .submenu {
-		margin-right: calc(1em + 113px);
+		margin-right: calc(1em + 140px);
 	}
 	
 	html .right-group > a {
@@ -197,6 +197,12 @@ html .partners-contact-sales-body .site-header .container.web {
 	
 	/* Expanded Menu - End */
 	
+}
+
+@media (max-width: 1261px) {
+	.partners-body .site-header .right-group .contact-us {
+		display: block !important;
+	}
 }
 
 @media (min-width: 1444px) {
@@ -256,6 +262,12 @@ html .partners-contact-sales-body .site-header .container.web {
 /* Prevent Applet title from overflowing outside of its container */
 html .applet-content h2 {
 	word-break: break-word;
+}
+
+a[href^="https://platform.ifttt.com/contact_sales?utm_campaign=Logged_Out_Header"],
+div[data-react-class="App.Comps.HeaderDropDownMenu"][data-react-props*="\"signedIn\""],
+a[href="https://platform.ifttt.com/plans"] {
+	display: none !important;
 }
 
 
