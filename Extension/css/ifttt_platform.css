@@ -266,7 +266,8 @@ html .applet-content h2 {
 
 a[href^="https://platform.ifttt.com/contact_sales?utm_campaign=Logged_Out_Header"],
 div[data-react-class="App.Comps.HeaderDropDownMenu"][data-react-props*="\"signedIn\""],
-a[href="https://platform.ifttt.com/plans"] {
+a[href="https://platform.ifttt.com/plans"],
+.site-header > .container > .right-group > .menu-options {
 	display: none !important;
 }
 
