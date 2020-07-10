@@ -25,14 +25,12 @@
   
   const dev = localStorage.getItem('dev') == 'true';
   
-  function minifyCss(css) {
-    return css
+  const minifyCss = css => css
     .replace(/\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g, '')
     .replace(/ {2,}/g, ' ')
     .replace(/ ([{:}]) /g, '$1')
     .replace(/([;,]) /g, '$1')
     .replace(/ !/g, '!');
-  }
   
   const updateStyle = (id, css) => {
     const existingStyle = document.getElementById(id);

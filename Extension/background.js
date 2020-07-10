@@ -41,8 +41,8 @@ const httpRequest = url => new Promise(resolve => {
     if (response.status !== 200) throw '';
     return response.text();
   })
-  .then(css => resolve(css))
-  .catch(() => resolve());
+    .then(css => resolve(css))
+    .catch(() => resolve());
 });
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {

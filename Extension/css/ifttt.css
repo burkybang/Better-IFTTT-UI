@@ -1,19 +1,19 @@
 html body {
-	overflow: hidden;
-	font-size: 1em !important;
-	color: #000000;
+  overflow: hidden;
+  font-size: 1em !important;
+  color: #000000;
 }
 
 html body.diy-creation-body {
-	--header-background-color: #000000;
+  --header-background-color: #000000;
 }
 
 html body.diy-creation-body .site-header,
 html body.diy-creation-body .service-connection .btn,
 html .site-footer .partner-banner a.platform-cta-banner,
 html .site-footer > div {
-	background-color: var(--header-background-color) !important;
-	transition: background-color 0.3s !important;
+  background-color: var(--header-background-color) !important;
+  transition: background-color 0.3s !important;
 }
 
 html body .account-menu li a.active,
@@ -23,286 +23,286 @@ html body.activities-body .account-menu li a[href="https://ifttt.com/activity"],
 html body.dashboard-body.applets-action .account-menu li a[href="https://ifttt.com/my_applets"],
 html body.dashboard-body.services-action .account-menu li a[href="https://ifttt.com/my_services"],
 html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
-	color: #09f;
-	box-shadow: 0 0.275em #09f;
+  color: #09f;
+  box-shadow: 0 0.275em #09f;
 }
 
 html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
-	box-shadow: 0 0.275em #fff;
+  box-shadow: 0 0.275em #fff;
 }
 
 @media (max-width: 1443px) {
-	html body .account-menu li a {
-		box-shadow: none !important;
-	}
+  html body .account-menu li a {
+    box-shadow: none !important;
+  }
 }
 
 html .ifttt-next .menu.account-menu .submenu li:not(.name) a,
 html .my-services h1 {
-	text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 @media (min-width: 724px) and (min-height: 850px) {
-	
-	/* Floating Header */
-	html body {
-		padding-top: 4.96em;
-	}
-	
-	/* Floating Header */
-	html .ifttt-next.site-header {
-		position: fixed;
-		top: 0;
-		z-index: 9999;
-	}
-	
+  
+  /* Floating Header */
+  html body {
+    padding-top: 4.96em;
+  }
+  
+  /* Floating Header */
+  html .ifttt-next.site-header {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+  }
+  
 }
 
 @media (min-width: 1700px) and (min-height: 850px) {
-	
-	/* Floating Back Button */
-	html .ifttt-next.activities-body .activity-back-button a.btn,
-	html body.connections-body .connection-header .connection-back-button a.btn,
-	html body.access-applets-body.edit-action .connection-header .connection-back-button a.btn,
-	html body.services-body.show-action .ifttt-back-button a.btn {
-		position: fixed !important;
-		top: calc(1em + 82px) !important;
-		z-index: 9999;
-	}
-	
-	/* Floating Settings Button */
-	html body.connections-body .connection-header .connection-settings-btn a.btn,
-	html body.services-body .service-header .service-settings-btn a.btn,
-	html body.access-applets-body.edit-action .connection-header .connection-settings-btn a.btn {
-		position: fixed;
-		top: calc(1em + 82px);
-		right: 1.25em;
-		z-index: 9999;
-	}
-	
-	/* Floating Top Right Non-Settings Button */
-	html body.services-body .service-header div:not([data-react-props^="{\"text\":\"Settings\""]) > .service-settings-btn a.btn,
-	html body.connections-body .connection-header div:not([data-react-class="App.Comps.ConnectionCard.SettingsButton"]) > .connection-settings-btn a.btn {
-		right: calc(1.25em + 135px);
-	}
-	
-	/* Floating Back Button */
-	html body #config-editor .connection-back-btn,
-	html body #config-editor .connection-back-btn {
-		position: fixed !important;
-		z-index: 9999;
-	}
-	
-	/* Floating Back Button */
-	html body #config-editor .connection-back-btn .btn,
-	html body #config-editor .connection-back-btn .btn {
-		background-color: white;
-	}
-	
-	/* Invert Floating Back Button when it's outside of a colored header */
-	html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-back-button .btn.btn-outlined,
-	html body[style="background-color: rgb(0, 0, 0);"].services-body.show-action .ifttt-back-button a.btn,
-		/* Floating Settings Button when it's outside of a colored header */
-	html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-settings-btn .btn.btn-outlined,
-	html body[style="background-color: rgb(0, 0, 0);"].services-body .service-header .service-settings-btn a.btn {
-		filter: invert(1);
-		background-color: black;
-	}
-	
+  
+  /* Floating Back Button */
+  html .ifttt-next.activities-body .activity-back-button a.btn,
+  html body.connections-body .connection-header .connection-back-button a.btn,
+  html body.access-applets-body.edit-action .connection-header .connection-back-button a.btn,
+  html body.services-body.show-action .ifttt-back-button a.btn {
+    position: fixed !important;
+    top: calc(1em + 82px) !important;
+    z-index: 9999;
+  }
+  
+  /* Floating Settings Button */
+  html body.connections-body .connection-header .connection-settings-btn a.btn,
+  html body.services-body .service-header .service-settings-btn a.btn,
+  html body.access-applets-body.edit-action .connection-header .connection-settings-btn a.btn {
+    position: fixed;
+    top: calc(1em + 82px);
+    right: 1.25em;
+    z-index: 9999;
+  }
+  
+  /* Floating Top Right Non-Settings Button */
+  html body.services-body .service-header div:not([data-react-props^="{\"text\":\"Settings\""]) > .service-settings-btn a.btn,
+  html body.connections-body .connection-header div:not([data-react-class="App.Comps.ConnectionCard.SettingsButton"]) > .connection-settings-btn a.btn {
+    right: calc(1.25em + 135px);
+  }
+  
+  /* Floating Back Button */
+  html body #config-editor .connection-back-btn,
+  html body #config-editor .connection-back-btn {
+    position: fixed !important;
+    z-index: 9999;
+  }
+  
+  /* Floating Back Button */
+  html body #config-editor .connection-back-btn .btn,
+  html body #config-editor .connection-back-btn .btn {
+    background-color: white;
+  }
+  
+  /* Invert Floating Back Button when it's outside of a colored header */
+  html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-back-button .btn.btn-outlined,
+  html body[style="background-color: rgb(0, 0, 0);"].services-body.show-action .ifttt-back-button a.btn,
+    /* Floating Settings Button when it's outside of a colored header */
+  html body[style="background-color: rgb(0, 0, 0);"] .connection-header .connection-settings-btn .btn.btn-outlined,
+  html body[style="background-color: rgb(0, 0, 0);"].services-body .service-header .service-settings-btn a.btn {
+    filter: invert(1);
+    background-color: black;
+  }
+  
 }
 
 @media (min-width: 724px) {
-	
-	html .home-body [class^="service_list_item__service-title__"],
-	html .dashboard-body.services-action .my-services .services-list .service-item a .service-title {
-		font-size: 1em;
-	}
-	
-	/* Add On/Off Label to Switches with No Labels - Start */
-	html body:not(.diy-creation-body) .switch .switch-label-off,
-	html body:not(.diy-creation-body) .switch .switch-label-on {
-		font-size: 1.1em;
-	}
-	
-	html body:not(.diy-creation-body) .switch-label {
-		height: 1.7em;
-		line-height: 2em;
-		font-weight: bold;
-	}
-	
-	html body:not(.diy-creation-body) .switch-label-on:before {
-		content: "On";
-	}
-	
-	html body:not(.diy-creation-body) .switch-label-off:before {
-		content: "Off";
-	}
-	
-	html .push-notifications .switch,
-	html .service-settings .switch,
-	html .connection-config-editor .switch {
-		width: 6em;
-	}
-	
-	/* Add On/Off Label to Switches with No Labels - End */
-	
+  
+  html .home-body [class^="service_list_item__service-title__"],
+  html .dashboard-body.services-action .my-services .services-list .service-item a .service-title {
+    font-size: 1em;
+  }
+  
+  /* Add On/Off Label to Switches with No Labels - Start */
+  html body:not(.diy-creation-body) .switch .switch-label-off,
+  html body:not(.diy-creation-body) .switch .switch-label-on {
+    font-size: 1.1em;
+  }
+  
+  html body:not(.diy-creation-body) .switch-label {
+    height: 1.7em;
+    line-height: 2em;
+    font-weight: bold;
+  }
+  
+  html body:not(.diy-creation-body) .switch-label-on:before {
+    content: "On";
+  }
+  
+  html body:not(.diy-creation-body) .switch-label-off:before {
+    content: "Off";
+  }
+  
+  html .push-notifications .switch,
+  html .service-settings .switch,
+  html .connection-config-editor .switch {
+    width: 6em;
+  }
+  
+  /* Add On/Off Label to Switches with No Labels - End */
+  
 }
 
 @media (min-width: 1444px) {
-	
-	html .ifttt-next.site-header .navigation .search-group .search-field .input input[type="text"] {
-		max-width: calc(100vw - 1260px);
-	}
-	
-	/* Expanded Menu - Start */
-	html .ifttt-next .menu.account-menu {
-		position: static;
-	}
-	
-	html .ifttt-next .menu.account-menu > li.name {
-		display: none;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu {
-		visibility: visible;
-		position: absolute;
-		right: 8.5em;
-		top: 1.25em;
-		box-shadow: none;
-		height: 2.4em;
-		display: flex;
-		align-items: center;
-		background-color: transparent;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu > li {
-		display: inline-block;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu li.name {
-		cursor: default;
-		height: auto;
-		border-top-left-radius: 0;
-		border-top-right-radius: 0;
-		font-size: 0.9em;
-		order: 1;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu li.name .login {
-		height: auto;
-		width: 100%;
-		overflow: visible;
-		color: #000000;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu li.name .login span {
-		font-size: inherit;
-		color: inherit;
-		margin-left: auto;
-		order: 1;
-		padding: 0 .5em;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu li.name .profile-avatar-container {
-		margin: -0.8em 0 -0.8em 0.3em;
-		border: 0;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu li:last-of-type {
-		padding-bottom: 0;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu li:hover {
-		background: transparent;
-	}
-	
-	html .ifttt-next .menu.account-menu .submenu a {
-		padding: 0.5em 0.75em !important;
-		height: 2em;
-		display: flex;
-		align-items: center;
-	}
-	
-	html .services-body .ifttt-next .menu.account-menu .submenu li a,
-	html .connections-body .ifttt-next .menu.account-menu .submenu li a,
-	html .diy-creation-body .ifttt-next .menu.account-menu .submenu li a,
-	html .service-settings-body .ifttt-next .menu.account-menu .submenu li a {
-		color: white !important;
-	}
-	
-	/* Expanded Menu - End */
-	html .home-body [class^="my_services_view__my-services-container__"] [class^="my_services_view__my-services-list__"] {
-		grid: auto/30% 30% 30%;
-	}
-	
-	html .dashboard-body .container.web > div > h1 {
-		float: left;
-		margin-top: 0;
-	}
-	
-	html .dashboard-body .container.web > div > .ifttt-next-search {
-		float: right;
-	}
-	
-	html .dashboard-body .container.web > div > .dashboard-applets {
-		clear: both;
-	}
-	
-	html .dashboard-body .web-applet-cards,
-	html .diy-creation-body .trigger-fields .trigger-fields-container,
-	html .diy-creation-body .action-fields .trigger-fields-container {
-		max-width: 100% !important;
-	}
-	
-	html .dashboard-body.services-action .my-services {
-		max-width: 100% !important;
-	}
-	
-	html .dashboard-body.services-action .my-services .services-list {
-		grid-template-columns: repeat(4, 25%);
-		padding: 0 1.4em;
-	}
-	
-	html .dashboard-body.services-action .my-services,
-	html .connections-body.edit-action #config-editor .connection-config-editor,
-	html .access-applets-body.edit-action #config-editor .connection-config-editor {
-		width: 100% !important;
-		max-width: 1284px;
-	}
-	
-	/* Applet Edit: Fields in 2 Columns */
-	html .connections-body.edit-action ul.form,
-	html .diy-creation-body .trigger-fields ul.fields,
-	html .diy-creation-body .action-fields ul.fields {
-		display: grid;
-		grid: auto/50% 50%;
-		grid-gap: 0 1.4em;
-		margin-right: 1.4em;
-		align-items: baseline;
-	}
-	
-	/* Applet Edit: Fields in 2 Columns: Display 1 Column If Only 1 Field */
-	html .connections-body.edit-action ul.form > .field:first-child:last-child,
-	html .diy-creation-body .trigger-fields ul.fields > .field:first-child:last-child,
-	html .diy-creation-body .action-fields ul.fields > .field:first-child:last-child {
-		grid-column: span 2;
-	}
-	
-	/* Align Controls */
-	html body.connections-body.edit-action #config-editor .connection-push-notifications,
-	html body.access-applets-body.edit-action #config-editor .connection-push-notifications,
-	html body.connections-body.edit-action #config-editor .connection-view-activity,
-	html body.access-applets-body.edit-action #config-editor .connection-view-activity {
-		max-width: 50em;
-	}
-	
-	/* Align Controls */
-	html body.connections-body.edit-action #config-editor .connection-view-activity .connection-check,
-	html body.access-applets-body.edit-action #config-editor .connection-view-activity .connection-check {
-		float: none;
-		margin-top: 3.5em;
-	}
-	
+  
+  html .ifttt-next.site-header .navigation .search-group .search-field .input input[type="text"] {
+    max-width: calc(100vw - 1260px);
+  }
+  
+  /* Expanded Menu - Start */
+  html .ifttt-next .menu.account-menu {
+    position: static;
+  }
+  
+  html .ifttt-next .menu.account-menu > li.name {
+    display: none;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu {
+    visibility: visible;
+    position: absolute;
+    right: 8.5em;
+    top: 1.25em;
+    box-shadow: none;
+    height: 2.4em;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu > li {
+    display: inline-block;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu li.name {
+    cursor: default;
+    height: auto;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 0.9em;
+    order: 1;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu li.name .login {
+    height: auto;
+    width: 100%;
+    overflow: visible;
+    color: #000000;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu li.name .login span {
+    font-size: inherit;
+    color: inherit;
+    margin-left: auto;
+    order: 1;
+    padding: 0 .5em;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu li.name .profile-avatar-container {
+    margin: -0.8em 0 -0.8em 0.3em;
+    border: 0;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu li:last-of-type {
+    padding-bottom: 0;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu li:hover {
+    background: transparent;
+  }
+  
+  html .ifttt-next .menu.account-menu .submenu a {
+    padding: 0.5em 0.75em !important;
+    height: 2em;
+    display: flex;
+    align-items: center;
+  }
+  
+  html .services-body .ifttt-next .menu.account-menu .submenu li a,
+  html .connections-body .ifttt-next .menu.account-menu .submenu li a,
+  html .diy-creation-body .ifttt-next .menu.account-menu .submenu li a,
+  html .service-settings-body .ifttt-next .menu.account-menu .submenu li a {
+    color: white !important;
+  }
+  
+  /* Expanded Menu - End */
+  html .home-body [class^="my_services_view__my-services-container__"] [class^="my_services_view__my-services-list__"] {
+    grid: auto/30% 30% 30%;
+  }
+  
+  html .dashboard-body .container.web > div > h1 {
+    float: left;
+    margin-top: 0;
+  }
+  
+  html .dashboard-body .container.web > div > .ifttt-next-search {
+    float: right;
+  }
+  
+  html .dashboard-body .container.web > div > .dashboard-applets {
+    clear: both;
+  }
+  
+  html .dashboard-body .web-applet-cards,
+  html .diy-creation-body .trigger-fields .trigger-fields-container,
+  html .diy-creation-body .action-fields .trigger-fields-container {
+    max-width: 100% !important;
+  }
+  
+  html .dashboard-body.services-action .my-services {
+    max-width: 100% !important;
+  }
+  
+  html .dashboard-body.services-action .my-services .services-list {
+    grid-template-columns: repeat(4, 25%);
+    padding: 0 1.4em;
+  }
+  
+  html .dashboard-body.services-action .my-services,
+  html .connections-body.edit-action #config-editor .connection-config-editor,
+  html .access-applets-body.edit-action #config-editor .connection-config-editor {
+    width: 100% !important;
+    max-width: 1284px;
+  }
+  
+  /* Applet Edit: Fields in 2 Columns */
+  html .connections-body.edit-action ul.form,
+  html .diy-creation-body .trigger-fields ul.fields,
+  html .diy-creation-body .action-fields ul.fields {
+    display: grid;
+    grid: auto/50% 50%;
+    grid-gap: 0 1.4em;
+    margin-right: 1.4em;
+    align-items: baseline;
+  }
+  
+  /* Applet Edit: Fields in 2 Columns: Display 1 Column If Only 1 Field */
+  html .connections-body.edit-action ul.form > .field:first-child:last-child,
+  html .diy-creation-body .trigger-fields ul.fields > .field:first-child:last-child,
+  html .diy-creation-body .action-fields ul.fields > .field:first-child:last-child {
+    grid-column: span 2;
+  }
+  
+  /* Align Controls */
+  html body.connections-body.edit-action #config-editor .connection-push-notifications,
+  html body.access-applets-body.edit-action #config-editor .connection-push-notifications,
+  html body.connections-body.edit-action #config-editor .connection-view-activity,
+  html body.access-applets-body.edit-action #config-editor .connection-view-activity {
+    max-width: 50em;
+  }
+  
+  /* Align Controls */
+  html body.connections-body.edit-action #config-editor .connection-view-activity .connection-check,
+  html body.access-applets-body.edit-action #config-editor .connection-view-activity .connection-check {
+    float: none;
+    margin-top: 3.5em;
+  }
+  
 }
 
 @media (max-width: 1443px) {
@@ -310,111 +310,111 @@ html .my-services h1 {
 }
 
 @media (min-width: 724px) and (max-width: 1443px) {
-	
+
 }
 
 html .dashboard-body.services-action .my-services .services-list {
-	padding-top: 3.5em !important;
+  padding-top: 3.5em !important;
 }
 
 html .dashboard-body.services-action .my-services .services-list .service-item {
-	padding-top: 0;
+  padding-top: 0;
 }
 
 html .dashboard-body.services-action .my-services .services-list .service-item a {
-	padding: 1.5em !important;
-	background-color: black;
-	border-radius: 0.9em;
-	box-shadow: 0 1.5px 6px 0 rgba(0, 0, 0, 0.24);
+  padding: 1.5em !important;
+  background-color: black;
+  border-radius: 0.9em;
+  box-shadow: 0 1.5px 6px 0 rgba(0, 0, 0, 0.24);
 }
 
 html .service-list-item a {
-	height: auto;
-	padding: 1em;
+  height: auto;
+  padding: 1em;
 }
 
 html .dashboard-body.services-action .my-services .services-list .service-item a .service-icon,
 html [class^="service_list_item__service-icon__"] {
-	height: 2em;
+  height: 2em;
 }
 
 html .dashboard-body.services-action .my-services .services-list .service-item a .service-icon {
-	filter: none;
+  filter: none;
 }
 
 html .dashboard-body.services-action .my-services .services-list .service-item a .service-icon[title="Instapaper Old"] {
-	background: url(https://assets.ifttt.com/images/channels/1646223231/icons/monochrome_large.png) no-repeat center center;
-	background-size: contain;
-	width: 2em;
-	color: transparent;
+  background: url(https://assets.ifttt.com/images/channels/1646223231/icons/monochrome_large.png) no-repeat center center;
+  background-size: contain;
+  width: 2em;
+  color: transparent;
 }
 
 html .dashboard-body.services-action .my-services .services-list .service-item a .service-title {
-	color: white;
+  color: white;
 }
 
 html .dashboard-body.services-action .my-services .services-list .service-item a .service-arrow svg path {
-	fill: white;
+  fill: white;
 }
 
 html .services-body.show-action .triggers-actions-container,
 html .diy-creation-body.show-action .triggers-actions-container {
-	margin-bottom: 4em;
+  margin-bottom: 4em;
 }
 
 html .services-body.show-action .triggers-actions-container .web-applet-cards {
-	max-width: 36em;
+  max-width: 36em;
 }
 
 html .diy-creation-body.show-action .triggers-actions-container .web-applet-cards {
-	max-width: 500px;
-	margin-top: 1em;
+  max-width: 500px;
+  margin-top: 1em;
 }
 
 html .diy-creation-body.show-action .triggers-actions,
 html .services-body.show-action .triggers-actions {
-	margin-bottom: 1em;
-	width: 100%;
-	text-align: left;
+  margin-bottom: 1em;
+  width: 100%;
+  text-align: left;
 }
 
 html .services-body.show-action .triggers-actions .title,
 html .diy-creation-body.show-action .triggers-actions .title {
-	font-size: 1.125em;
-	font-weight: 800;
-	line-height: 1.125;
+  font-size: 1.125em;
+  font-weight: 800;
+  line-height: 1.125;
 }
 
 html .services-body.show-action .triggers-actions .description,
 html .diy-creation-body.show-action .triggers-actions .description {
-	font-size: 1em;
-	font-weight: 700;
-	margin-top: 0.2em;
+  font-size: 1em;
+  font-weight: 700;
+  margin-top: 0.2em;
 }
 
 html .services-body.show-action .triggers-actions .fields,
 html .diy-creation-body.show-action .triggers-actions .fields {
-	font-size: 1em;
-	margin-top: 0.2em;
+  font-size: 1em;
+  margin-top: 0.2em;
 }
 
 html .activities-body .feed {
-	max-width: 70em;
+  max-width: 70em;
 }
 
 html .activities-body .feed .applet-header {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 html body.connections-body.show-action .connection-header .cta,
 html body.connections-body.edit-action .connection-header .cta,
 html body.access-applets-body.edit-action .connection-header .cta {
-	width: 100% !important;
-	max-width: 70em;
-	word-break: break-word;
+  width: 100% !important;
+  max-width: 70em;
+  word-break: break-word;
 }
 
 /* Decrease size of the giant spacing at the bottom of the page */
 html .breath-space {
-	min-height: 30vmin;
+  min-height: 30vmin;
 }

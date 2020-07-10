@@ -1,5 +1,5 @@
 html body {
-	font-size: 1em !important;
+  font-size: 1em !important;
 }
 
 html header .container,
@@ -9,266 +9,266 @@ html .applet-preview-card,
 html .partners-applets-body .applet-preview-applet-card,
 html .partners-connections-body .applet-preview-applet-card,
 html .applet-composer .composer-section-with-icon {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 html .container.web {
-	padding: 1.25em;
+  padding: 1.25em;
 }
 
 html .partners-body .logo {
-	margin-left: 0;
+  margin-left: 0;
 }
 
 @media (min-width: 1072px) {
-	
-	html .partners-body.partners-applets-body.new-action .main-sidebar-column,
-	html .partners-body.partners-applets-body.edit-action .main-sidebar-column {
-		width: 10%;
-	}
-	
-	html .partners-body.partners-applets-body.new-action .main-content-column,
-	html .partners-body.partners-applets-body.edit-action .main-content-column {
-		width: 70%;
-	}
-	
-	html .partners-body.partners-applets-body .applet-composer .partners-filter-code-apis.partners-filter-code-apis-right-gutter {
-		width: 100%;
-		max-width: calc(20vw - 20px);
-	}
-	
+  
+  html .partners-body.partners-applets-body.new-action .main-sidebar-column,
+  html .partners-body.partners-applets-body.edit-action .main-sidebar-column {
+    width: 10%;
+  }
+  
+  html .partners-body.partners-applets-body.new-action .main-content-column,
+  html .partners-body.partners-applets-body.edit-action .main-content-column {
+    width: 70%;
+  }
+  
+  html .partners-body.partners-applets-body .applet-composer .partners-filter-code-apis.partners-filter-code-apis-right-gutter {
+    width: 100%;
+    max-width: calc(20vw - 20px);
+  }
+  
 }
 
 /* New Layout for Applet View - Start */
 html .partners-body.partners-applets-body .main-content-column,
 html .partners-body.partners-applets-body .main-sidebar-column {
-	width: 100%;
+  width: 100%;
 }
 
 html body:not(#partners-docs-body) .sidebar-nav {
-	display: flex;
+  display: flex;
 }
 
 html body:not(#partners-docs-body) .sidebar-nav ul {
-	display: flex;
-	align-self: center;
-	margin-right: auto;
-	margin-left: auto;
+  display: flex;
+  align-self: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 html body:not(#partners-docs-body) .sidebar-nav a {
-	margin: 0;
-	padding: 0.25em 1em;
-	white-space: nowrap;
-	border-left-width: 0;
-	border-bottom: solid 0.275em transparent;
+  margin: 0;
+  padding: 0.25em 1em;
+  white-space: nowrap;
+  border-left-width: 0;
+  border-bottom: solid 0.275em transparent;
 }
 
 html body:not(#partners-docs-body) .sidebar-nav li.active a {
-	border-bottom-width: 0.275em;
-	border-bottom-color: #09f;
+  border-bottom-width: 0.275em;
+  border-bottom-color: #09f;
 }
 
 html .partners-body.partners-applets-body.show-action .applets-index-applet-cards .web-applet-card,
 html .partners-body.partners-applets-body.show-action .applet-preview-applet-card .web-applet-card,
 html .partners-connections-body .applets-index-applet-cards .web-applet-card,
 html .partners-connections-body .applet-preview-applet-card .web-applet-card {
-	width: 19em;
+  width: 19em;
 }
 
 html body#partners-docs-body .docs-main-content {
-	margin-bottom: calc(100vh - 23em);
+  margin-bottom: calc(100vh - 23em);
 }
 
 /* New Layout for Applet View - End */
 
 html .applet-composer.applet-composer-with-right-gutter {
-	max-width: 70em;
+  max-width: 70em;
 }
 
 html .partners-contact-sales-body .site-header .container.web {
-	max-width: 100%;
+  max-width: 100%;
 }
 
 @media (min-width: 724px) and (min-height: 850px) {
-	
-	/* Floating Header */
-	html body {
-		padding-top: 4.68em;
-	}
-	
-	/* Floating Header */
-	html .site-header {
-		position: fixed;
-		top: 0;
-		z-index: 9999;
-	}
-	
-	html body#partners-docs-body nav.sidebar-nav.is_stuck {
-		margin-top: 4.5em;
-	}
-	
+  
+  /* Floating Header */
+  html body {
+    padding-top: 4.68em;
+  }
+  
+  /* Floating Header */
+  html .site-header {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+  }
+  
+  html body#partners-docs-body nav.sidebar-nav.is_stuck {
+    margin-top: 4.5em;
+  }
+  
 }
 
 
 @media (min-width: 1026px) {
-	
-	/* Expanded Menu - Start */
-	html .menu.account-menu {
-		position: static;
-	}
-	
-	html .menu.account-menu > .name,
-	html .menu.account-menu li.name svg {
-		display: none;
-	}
-	
-	html .menu.account-menu .submenu {
-		visibility: visible;
-		position: absolute;
-		right: 1.25em;
-		top: calc(1em + 3px);
-		box-shadow: none;
-		height: 2.4em;
-		display: flex;
-		align-items: center;
-		background-color: transparent;
-		padding: 0;
-	}
-	
-	html .right-group a[title="Dashboard"] + div .menu.account-menu .submenu {
-		margin-right: calc(1em + 117px);
-	}
-	
-	html .right-group a.contact-us + div .menu.account-menu .submenu {
-		margin-right: calc(1em + 140px);
-	}
-	
-	html .right-group > a {
-		padding: 0.4375em 1em;
-		margin-left: 1em;
-		margin-right: 0 !important;
-		background-color: #ffffff;
-		color: #000000;
-		font-size: 1em;
-		border-radius: 2.5em;
-	}
-	
-	html .menu.account-menu .submenu li {
-		display: inline-block;
-	}
-	
-	html .menu.account-menu li:first-of-type {
-		cursor: default;
-	}
-	
-	html .menu.account-menu .submenu li.name {
-		order: 1;
-	}
-	
-	html .menu.account-menu .submenu li.name .avatar {
-		max-width: 2.4em;
-		max-height: 2.4em;
-		margin: -0.3em 0 -0.9em 0;
-	}
-	
-	html .menu.account-menu .submenu li.name .login {
-		color: white;
-		font-size: 0.9em;
-	}
-	
-	html .menu.account-menu .submenu li:last-of-type {
-		padding-bottom: 0;
-	}
-	
-	html .menu.account-menu .submenu li:hover {
-		background: transparent;
-	}
-	
-	html .menu.account-menu .submenu a {
-		padding: 0 !important;
-		margin-right: 1.8em;
-		height: 2em;
-		display: flex;
-		align-items: center;
-		text-transform: capitalize;
-		color: white;
-	}
-	
-	/* Expanded Menu - End */
-	
+  
+  /* Expanded Menu - Start */
+  html .menu.account-menu {
+    position: static;
+  }
+  
+  html .menu.account-menu > .name,
+  html .menu.account-menu li.name svg {
+    display: none;
+  }
+  
+  html .menu.account-menu .submenu {
+    visibility: visible;
+    position: absolute;
+    right: 1.25em;
+    top: calc(1em + 3px);
+    box-shadow: none;
+    height: 2.4em;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  html .right-group a[title="Dashboard"] + div .menu.account-menu .submenu {
+    margin-right: calc(1em + 117px);
+  }
+  
+  html .right-group a.contact-us + div .menu.account-menu .submenu {
+    margin-right: calc(1em + 140px);
+  }
+  
+  html .right-group > a {
+    padding: 0.4375em 1em;
+    margin-left: 1em;
+    margin-right: 0 !important;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1em;
+    border-radius: 2.5em;
+  }
+  
+  html .menu.account-menu .submenu li {
+    display: inline-block;
+  }
+  
+  html .menu.account-menu li:first-of-type {
+    cursor: default;
+  }
+  
+  html .menu.account-menu .submenu li.name {
+    order: 1;
+  }
+  
+  html .menu.account-menu .submenu li.name .avatar {
+    max-width: 2.4em;
+    max-height: 2.4em;
+    margin: -0.3em 0 -0.9em 0;
+  }
+  
+  html .menu.account-menu .submenu li.name .login {
+    color: white;
+    font-size: 0.9em;
+  }
+  
+  html .menu.account-menu .submenu li:last-of-type {
+    padding-bottom: 0;
+  }
+  
+  html .menu.account-menu .submenu li:hover {
+    background: transparent;
+  }
+  
+  html .menu.account-menu .submenu a {
+    padding: 0 !important;
+    margin-right: 1.8em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: white;
+  }
+  
+  /* Expanded Menu - End */
+  
 }
 
 @media (max-width: 1261px) {
-	.partners-body .site-header .right-group .contact-us {
-		display: block !important;
-	}
+  .partners-body .site-header .right-group .contact-us {
+    display: block !important;
+  }
 }
 
 @media (min-width: 1444px) {
-	
-	/* Expanded Menu */
-	html .menu.account-menu .submenu {
-		top: calc(1em + 5px);
-	}
-	
-	/* New Layout for Applet View - Start */
-	html .partners-body.show-action .main-content-column {
-		display: grid;
-		grid: auto/22em calc(100% - 22em);
-	}
-	
-	html .partners-body.show-action .main-content-column .page-header.with-actions {
-		grid-column: span 2;
-	}
-	
-	html .partners-body.show-action .main-content-column .applet-preview-details {
-		margin-top: 2em;
-	}
-	
-	html .partners-body.partners-applets-body.show-action .preview-section,
-	html .partners-connections-body .preview-section {
-		grid-row: span 2;
-	}
-	
-	html .partners-body.partners-applets-body.show-action .applets-index-applet-cards,
-	html .partners-body.partners-applets-body.show-action .applet-preview-applet-card,
-	html .partners-connections-body .applets-index-applet-cards,
-	html .partners-connections-body .applet-preview-applet-card {
-		margin: 0;
-	}
-	
-	html .partners-body.partners-applets-body.show-action .applets-index-applet-cards .web-applet-card,
-	html .partners-body.partners-applets-body.show-action .applet-preview-applet-card .web-applet-card,
-	html .partners-connections-body .applets-index-applet-cards .web-applet-card,
-	html .partners-connections-body .applet-preview-applet-card .web-applet-card {
-		padding: 0;
-	}
-	
-	html .partners-body.partners-applets-body.show-action .applet-preview-details-list,
-	html .partners-connections-body .applet-preview-details-list {
-		margin: 0;
-	}
-	
-	html .partners-body.partners-applets-body.show-action .preview-section > .preview-section-content,
-	html .partners-connections-body .preview-section > .preview-section-content {
-		border-radius: 0.5em;
-	}
-	
-	/* New Layout for Applet View - End */
-	
+  
+  /* Expanded Menu */
+  html .menu.account-menu .submenu {
+    top: calc(1em + 5px);
+  }
+  
+  /* New Layout for Applet View - Start */
+  html .partners-body.show-action .main-content-column {
+    display: grid;
+    grid: auto/22em calc(100% - 22em);
+  }
+  
+  html .partners-body.show-action .main-content-column .page-header.with-actions {
+    grid-column: span 2;
+  }
+  
+  html .partners-body.show-action .main-content-column .applet-preview-details {
+    margin-top: 2em;
+  }
+  
+  html .partners-body.partners-applets-body.show-action .preview-section,
+  html .partners-connections-body .preview-section {
+    grid-row: span 2;
+  }
+  
+  html .partners-body.partners-applets-body.show-action .applets-index-applet-cards,
+  html .partners-body.partners-applets-body.show-action .applet-preview-applet-card,
+  html .partners-connections-body .applets-index-applet-cards,
+  html .partners-connections-body .applet-preview-applet-card {
+    margin: 0;
+  }
+  
+  html .partners-body.partners-applets-body.show-action .applets-index-applet-cards .web-applet-card,
+  html .partners-body.partners-applets-body.show-action .applet-preview-applet-card .web-applet-card,
+  html .partners-connections-body .applets-index-applet-cards .web-applet-card,
+  html .partners-connections-body .applet-preview-applet-card .web-applet-card {
+    padding: 0;
+  }
+  
+  html .partners-body.partners-applets-body.show-action .applet-preview-details-list,
+  html .partners-connections-body .applet-preview-details-list {
+    margin: 0;
+  }
+  
+  html .partners-body.partners-applets-body.show-action .preview-section > .preview-section-content,
+  html .partners-connections-body .preview-section > .preview-section-content {
+    border-radius: 0.5em;
+  }
+  
+  /* New Layout for Applet View - End */
+  
 }
 
 /* Prevent Applet title from overflowing outside of its container */
 html .applet-content h2 {
-	word-break: break-word;
+  word-break: break-word;
 }
 
 a[href^="https://platform.ifttt.com/contact_sales?utm_campaign=Logged_Out_Header"],
 div[data-react-class="App.Comps.HeaderDropDownMenu"][data-react-props*="\"signedIn\""],
 a[href="https://platform.ifttt.com/plans"],
 .site-header > .container > .right-group > .menu-options {
-	display: none !important;
+  display: none !important;
 }
 
 
