@@ -8,7 +8,7 @@ html body.diy-creation-body {
   --header-background-color: #000000;
 }
 
-html body.diy-creation-body .site-header,
+html body.diy-creation-body .unified-header,
 html body.diy-creation-body .service-connection .btn,
 html .site-footer .partner-banner a.platform-cta-banner,
 html .site-footer > div {
@@ -50,10 +50,11 @@ html .my-services h1 {
   }
   
   /* Floating Header */
-  html .ifttt-next.site-header {
+  html > body > header {
     position: fixed;
     top: 0;
     z-index: 9999;
+    background-color: white;
   }
   
 }
@@ -150,7 +151,7 @@ html .my-services h1 {
 
 @media (min-width: 1444px) {
   
-  html .ifttt-next.site-header .navigation .search-group .search-field .input input[type="text"] {
+  html .ifttt-next.unified-header .navigation .search-group .search-field .input input[type="text"] {
     max-width: calc(100vw - 1260px);
   }
   

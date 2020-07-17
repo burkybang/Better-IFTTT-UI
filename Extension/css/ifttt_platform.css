@@ -86,7 +86,7 @@ html .applet-composer.applet-composer-with-right-gutter {
   max-width: 70em;
 }
 
-html .partners-contact-sales-body .site-header .container.web {
+html .partners-contact-sales-body .unified-header .container.web {
   max-width: 100%;
 }
 
@@ -98,7 +98,7 @@ html .partners-contact-sales-body .site-header .container.web {
   }
   
   /* Floating Header */
-  html .site-header {
+  html > body > header {
     position: fixed;
     top: 0;
     z-index: 9999;
@@ -144,7 +144,7 @@ html .partners-contact-sales-body .site-header .container.web {
     margin-right: calc(1em + 140px);
   }
   
-  html .right-group > a {
+  /*html .right-group > a {
     padding: 0.4375em 1em;
     margin-left: 1em;
     margin-right: 0 !important;
@@ -152,7 +152,7 @@ html .partners-contact-sales-body .site-header .container.web {
     color: #000000;
     font-size: 1em;
     border-radius: 2.5em;
-  }
+  }*/
   
   html .menu.account-menu .submenu li {
     display: inline-block;
@@ -200,7 +200,7 @@ html .partners-contact-sales-body .site-header .container.web {
 }
 
 @media (max-width: 1261px) {
-  .partners-body .site-header .right-group .contact-us {
+  .partners-body .unified-header .right-group .contact-us {
     display: block !important;
   }
 }
@@ -267,7 +267,7 @@ html .applet-content h2 {
 a[href^="https://platform.ifttt.com/contact_sales?utm_campaign=Logged_Out_Header"],
 div[data-react-class="App.Comps.HeaderDropDownMenu"][data-react-props*="\"signedIn\""],
 a[href="https://platform.ifttt.com/plans"],
-.site-header > .container > .right-group > .menu-options {
+.unified-header > .container > .right-group > .menu-options {
   display: none !important;
 }
 
