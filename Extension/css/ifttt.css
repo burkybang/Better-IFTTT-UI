@@ -94,14 +94,15 @@ html .my-services h1 {
   
   /* Floating Back Button */
   html body #config-editor .connection-back-btn,
-  html body #config-editor .connection-back-btn {
+  html body #config-editor .applet-pro-config-btn,
+  html body #config-editor div[data-react-class="App.Comps.LearnMoreButton"] > a.learn-more-icon {
     position: fixed !important;
     z-index: 9999;
   }
   
   /* Floating Back Button */
   html body #config-editor .connection-back-btn .btn,
-  html body #config-editor .connection-back-btn .btn {
+  html body #config-editor .applet-pro-config-btn .btn {
     background-color: white;
   }
   
