@@ -4,19 +4,19 @@ html body {
   color: #000000;
 }
 
-html body.diy-creation-body {
+/*html body.diy-creation-body {
   --header-background-color: #000000;
-}
+}*/
 
-html body.diy-creation-body .unified-header,
+/*html body.diy-creation-body .unified-header,
 html body.diy-creation-body .service-connection .btn,
 html .site-footer .partner-banner a.platform-cta-banner,
 html .site-footer > div {
   background-color: var(--header-background-color) !important;
   transition: background-color 0.3s !important;
-}
+}*/
 
-html body .account-menu li a.active,
+/*html body .account-menu li a.active,
 html body.home-body a.my_service,
 html body.settings-body .account-menu li a[href="https://ifttt.com/settings"],
 html body.activities-body .account-menu li a[href="https://ifttt.com/activity"],
@@ -25,11 +25,23 @@ html body.dashboard-body.services-action .account-menu li a[href="https://ifttt.
 html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
   color: #09f;
   box-shadow: 0 0.275em #09f;
+}*/
+
+html body.home-body div[data-react-class="App.Comps.HomeView"] > div > h1 {
+  visibility: hidden;
+  line-height: 0;
 }
 
-html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
-  box-shadow: 0 0.275em #fff;
+html body.home-body div[data-react-class="App.Comps.HomeView"] > div > h1::before {
+  content: "My Services";
+  visibility: visible;
+  display: block;
+  line-height: initial;
 }
+
+/*html body.diy-creation-body .account-menu li a[href="https://ifttt.com/create"] {
+  box-shadow: 0 0.275em #fff;
+}*/
 
 @media (max-width: 1443px) {
   html body .account-menu li a {
@@ -55,6 +67,7 @@ html .my-services h1 {
     top: 0;
     z-index: 9999;
     background-color: white;
+    box-shadow: 0 1.5px 6px 0 rgba(0,0,0,0.24);
   }
   
   /* Floating Header */
@@ -163,32 +176,38 @@ html .my-services h1 {
   }
   
   /* Expanded Menu - Start */
-  html header.ifttt-next .menu.account-menu {
+  /*html header.ifttt-next .menu.account-menu {
     position: static;
   }
   
   html header.ifttt-next .menu.account-menu > li.name {
     display: none;
-  }
+  }*/
   
   /* Expanded Menu - End */
-  html body.home-body [class^="my_services_view__my-services-container__"] [class^="my_services_view__my-services-list__"] {
+  html body.home-body main.container > div > div > ul {
     grid: auto/30% 30% 30%;
   }
   
-  html body.dashboard-body .container.web > div > h1 {
+  html body.home-body main.container > div > div > h1,
+  html body.dashboard-body main.container > div > h1 {
     float: left;
     margin-top: 0;
+    text-align: left;
+    max-width: 7em;
   }
   
-  html body.dashboard-body .container.web > div > .ifttt-next-search {
+  html body.home-body main.container > div > div > .ifttt-next-search,
+  html body.dashboard-body main.container > div > .ifttt-next-search {
     float: right;
   }
   
-  html body.dashboard-body .container.web > div > .dashboard-applets {
+  html body.home-body main.container > div > div > ul,
+  html body.dashboard-body main.container > div > section.dashboard-applets {
     clear: both;
   }
   
+  html body.home-body main.container,
   html body.dashboard-body main.container,
   html .web-applet-cards,
   html body.diy-creation-body .trigger-fields .trigger-fields-container,
@@ -250,6 +269,14 @@ html .my-services h1 {
 
 @media (min-width: 724px) and (max-width: 1443px) {
 
+}
+
+@media (min-width: 1918px) {
+  
+  html body.home-body main.container > div > div > ul {
+    grid: auto/24% 24% 24% 24%;
+  }
+  
 }
 
 html body.dashboard-body.services-action .my-services .services-list {
