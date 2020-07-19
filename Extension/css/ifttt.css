@@ -67,7 +67,8 @@ html .my-services h1 {
 @media (min-width: 1700px) and (min-height: 850px) {
   
   /* Floating Back Button */
-  html .ifttt-next.activities-body .activity-back-button a.btn,
+  html body.ifttt-next.activities-body .activity-back-button,
+  html body.ifttt-next.activities-body main.container > section.feed > div[data-react-class="App.Comps.LearnMoreButton"] > a.learn-more-icon,
   html body.connections-body .connection-header .connection-back-button a.btn,
   html body.access-applets-body.edit-action .connection-header .connection-back-button a.btn,
   html body.services-body.show-action .ifttt-back-button a.btn {
