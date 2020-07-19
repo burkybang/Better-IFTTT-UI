@@ -98,7 +98,7 @@ html .partners-contact-sales-body .unified-header .container.web {
   }
   
   /* Floating Header */
-  html > body > header {
+  html > body header.unified-header {
     position: fixed;
     top: 0;
     z-index: 9999;
