@@ -102,6 +102,7 @@ html .partners-contact-sales-body .unified-header .container.web {
     position: fixed;
     top: 0;
     z-index: 9999;
+    box-shadow: 0 1.5px 6px 0 rgba(0,0,0,0.24);
   }
   
   html body#partners-docs-body nav.sidebar-nav.is_stuck {
