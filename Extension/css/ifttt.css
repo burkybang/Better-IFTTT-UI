@@ -62,7 +62,7 @@ html .my-services h1 {
   }
   
   /* Floating Header */
-  html > body header.unified-header {
+  html body header.unified-header {
     position: fixed;
     top: 0;
     z-index: 9999;
@@ -71,8 +71,9 @@ html .my-services h1 {
   }
   
   /* Floating Header */
-  html > body > div.connection-header-container > header.unified-header {
+  html body header.unified-header.on-color {
     background-color: inherit;
+    transition: background-color 0.1s;
   }
   
 }
@@ -87,7 +88,7 @@ html .my-services h1 {
   html body.services-body.show-action .ifttt-back-button a.btn {
     position: fixed !important;
     top: calc(1em + 82px) !important;
-    z-index: 9999;
+    z-index: 998;
   }
   
   /* Floating Settings Button */
@@ -97,7 +98,7 @@ html .my-services h1 {
     position: fixed;
     top: calc(1em + 82px);
     right: 1.25em;
-    z-index: 9999;
+    z-index: 998;
   }
   
   /* Floating Top Right Non-Settings Button */
@@ -118,6 +119,7 @@ html .my-services h1 {
   html body #config-editor .connection-back-btn .btn,
   html body #config-editor .applet-pro-config-btn .btn {
     background-color: white;
+    transition: background-color 0.1s;
   }
   
   /* Invert Floating Back Button when it's outside of a colored header */
