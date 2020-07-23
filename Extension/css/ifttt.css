@@ -67,7 +67,7 @@ html .my-services h1 {
     top: 0;
     z-index: 9999;
     background-color: white;
-    box-shadow: 0 1.5px 6px 0 rgba(0,0,0,0.24);
+    box-shadow: 0 1.5px 6px 0 rgba(0, 0, 0, 0.24);
   }
   
   /* Floating Header */
@@ -185,7 +185,6 @@ html .my-services h1 {
   html header.ifttt-next .menu.account-menu > li.name {
     display: none;
   }*/
-  
   /* Expanded Menu - End */
   html body.home-body main.container > div > div > ul {
     grid: auto/30% 30% 30%;
@@ -374,8 +373,7 @@ html body.activities-body .feed .applet-header {
   max-width: 100%;
 }
 
-html body.connections-body.show-action .connection-header .cta,
-html body.connections-body.edit-action .connection-header .cta,
+html body.connections-body .connection-header .cta,
 html body.access-applets-body.edit-action .connection-header .cta {
   width: 100% !important;
   max-width: 70em;
