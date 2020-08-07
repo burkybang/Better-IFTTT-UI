@@ -1,18 +1,19 @@
-# Better IFTTT UI
+# Better IFTTT UI <img src="https://raw.githubusercontent.com/burkybang/Better-IFTTT-UI/master/Extension/icon.png" align="right" width="100" height="100"/>
 
-This is a browser extension to make the IFTTT UI more usable on desktop.
-
-This project is open source. If you'd like to contribute, please do so. I would love for this to be a community project.
+This is a browser extension to make the IFTTT UI more usable on desktop. 
 
 ## Download
 
-- [Google Chrome / Microsoft Edge](https://chrome.google.com/webstore/detail/diopohabmpmmpdabhghdpjnkhlicfjnp)
-- [Mozilla Firefox](https://addons.mozilla.org/en-US/firefox/addon/better-ifttt-ui/)
+[![Google Chrome](Images/chrome-web-store.png "Google Chrome")](https://chrome.google.com/webstore/detail/diopohabmpmmpdabhghdpjnkhlicfjnp)
+[![Mozilla Firefox](Images/firefox-add-ons.png "Mozilla Firefox")](https://addons.mozilla.org/en-US/firefox/addon/better-ifttt-ui/)
 
 ## Author
 
-- [@burkybang](https://twitter.com/burkybang)
-- [u/burkybang](https://reddit.com/u/burkybang)
+![Github](Images/github.png "Github") [burkybang](https://github.com/burkybang)
+
+![Reddit](Images/reddit.png "Reddit") [u/burkybang](https://reddit.com/u/burkybang)
+
+![Twitter](Images/twitter.png "Twitter") [@burkybang](https://twitter.com/burkybang)
 
 ## Modifications
 
