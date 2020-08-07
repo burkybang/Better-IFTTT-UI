@@ -4,15 +4,13 @@ This is a browser extension to make the IFTTT UI more usable on desktop.
 
 ## Download
 
-[![Google Chrome](Images/chrome-web-store.png "Google Chrome")](https://chrome.google.com/webstore/detail/diopohabmpmmpdabhghdpjnkhlicfjnp)
-[![Mozilla Firefox](Images/firefox-add-ons.png "Mozilla Firefox")](https://addons.mozilla.org/en-US/firefox/addon/better-ifttt-ui/)
+[![Google Chrome](https://github.com/burkybang/burkybang/raw/master/Images/chrome-web-store.png "Google Chrome")](https://chrome.google.com/webstore/detail/diopohabmpmmpdabhghdpjnkhlicfjnp)
+[![Mozilla Firefox](https://github.com/burkybang/burkybang/raw/master/Images/firefox-add-ons.png "Mozilla Firefox")](https://addons.mozilla.org/en-US/firefox/addon/better-ifttt-ui/)
 
 ## Author
 
-![GitHub](https://github.com/burkybang/burkybang/raw/master/Images/github16.png "GitHub") [burkybang](https://github.com/burkybang)
-
-![Reddit](https://github.com/burkybang/burkybang/raw/master/Images/reddit16.png "Reddit") [u/burkybang](https://reddit.com/u/burkybang)
-
+![GitHub](https://github.com/burkybang/burkybang/raw/master/Images/github16.png "GitHub") [burkybang](https://github.com/burkybang)  
+![Reddit](https://github.com/burkybang/burkybang/raw/master/Images/reddit16.png "Reddit") [u/burkybang](https://reddit.com/u/burkybang)  
 ![Twitter](https://github.com/burkybang/burkybang/raw/master/Images/twitter16.png "Twitter") [@burkybang](https://twitter.com/burkybang)
 
 ## Modifications
