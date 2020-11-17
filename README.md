@@ -2,10 +2,20 @@
 
 This is a browser extension to make the IFTTT UI more usable on desktop. 
 
+## Stats
+
+![Chrome Extension Version](https://img.shields.io/chrome-web-store/v/diopohabmpmmpdabhghdpjnkhlicfjnp?label=version&logo=google-chrome&logoColor=ffce43)
+![Chrome Extension Users](https://img.shields.io/endpoint?url=https%3A%2F%2Fsmithsdownunder.com%2Fget_chrome_extension_users%2F%3Fid%3Dcegndpdokeeegijbkidfcolhomffhibh%26output%3Dshields-io%26number-only%3D1&logoColor=ffce43)
+![Chrome Extension Rating](https://img.shields.io/chrome-web-store/stars/diopohabmpmmpdabhghdpjnkhlicfjnp?logo=google-chrome&logoColor=ffce43)
+
+![Mozilla Firefox Version](https://img.shields.io/amo/v/better-ifttt-ui?label=version&logo=firefox-browser)
+![Mozilla Firefox Users](https://img.shields.io/amo/users/better-ifttt-ui?logo=firefox-browser&color=orange)
+![Mozilla Firefox Rating](https://img.shields.io/amo/stars/better-ifttt-ui?label=rating&logo=firefox-browser)
+
 ## Download
 
-[![Google Chrome](https://github.com/burkybang/burkybang/raw/master/Images/chrome-web-store.png "Google Chrome")](https://chrome.google.com/webstore/detail/diopohabmpmmpdabhghdpjnkhlicfjnp)
-[![Mozilla Firefox](https://github.com/burkybang/burkybang/raw/master/Images/firefox-add-ons.png "Mozilla Firefox")](https://addons.mozilla.org/en-US/firefox/addon/better-ifttt-ui/)
+[![Google Chrome](https://github.com/burkybang/burkybang/raw/master/Images/chrome-web-store.png "Download for Google Chrome or Microsoft Edge")](https://chrome.google.com/webstore/detail/diopohabmpmmpdabhghdpjnkhlicfjnp)
+[![Mozilla Firefox](https://github.com/burkybang/burkybang/raw/master/Images/firefox-add-on.png "Download for Mozilla Firefox")](https://addons.mozilla.org/en-US/firefox/addon/better-ifttt-ui/)
 
 ## Author
 
